@@ -4,26 +4,44 @@
 
 ## Takım Rolleri
 
-- [@Serkan Kılıç](https://www.) Scrum Master / 
-- [@Şebnem Tan](https://www.) Product Owner / 3D Artist
-- [@Seydi Dağlı](https://www.) Developer / 
-- [@Seyfullah Korkmaz](https://www.) Developer / 
-- [@Şeyma Giritli](https://www.) Developer / Level Designer
+- _[@Serkan Kılıç](https://www.)_ _Scrum Master /_ 
+- _[@Şebnem Tan](https://www.)_ _Product Owner / 3D Artist_
+- _[@Seydi Dağlı](https://www.)_ _Developer /_
+- _[@Seyfullah Korkmaz](https://www.)_ _Developer /_ 
+- _[@Şeyma Giritli](https://www.)_ _Developer / Level Designer_
 
 
-# Ürün İsmi
-Lost Lamp
+# Oyun İsmi
+**Lost Lamp**
 
-# Ürün Açıklaması
-Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir lamba yakıcısının yürek burkan hikayesi. Annesi hasta, babası ölmüş, kız kardeşi ise kayıp...  Umutları tükenmek üzereyken, bir gece karanlık bir sır perdesini aralayacak. Tehlikeli bir yeraltı dünyasına adım atan bu cesur çocuk, kız kardeşini bulmak için her şeyi riske atacak.
+# Oyun Açıklaması
+_Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir lamba yakıcısının yürek burkan hikayesi. Annesi hasta, babası ölmüş, kız kardeşi ise kayıp...  Umutları tükenmek üzereyken, bir gece karanlık bir sır perdesini aralayacak. Tehlikeli bir yeraltı dünyasına adım atan bu cesur çocuk, kız kardeşini bulmak için her şeyi riske atacak._
 
-# Ürün Özellikleri
+# Oyun Özellikleri
 
-Adventure, Platform, Survival, Third Person, Low Poly
+- Adventure 
+- Platform
+- Survival
+- Third Person
+- Low Poly
 
 
 # Hedef Kitle
-Genel Kitle
+- Genel Kitle
+
 
 ## Product Backlog URL
 [Jira](https://unity-48.atlassian.net/jira/core/projects/U48/summary?atlOrigin=eyJpIjoiNzM0MTE5YTFhYThmNGI0ZmI1MmNiMWMyMWYxOWExYTAiLCJwIjoiaiJ9)
+
+- - - -
+# Sprint 1
+
+<details>
+           <summary>Title 1</summary>
+           <p> -Content 1 
+- Content 2 
+- Content 3 
+- Content 4 
+- Content 5
+</p>
+         </details>
