@@ -12,12 +12,12 @@
 # Ürün İsmi
 Lamp Boy
 
-# Ürün Açıklaması;
+# Ürün Açıklaması
 
 
 
 
-# Ürün Özellikleri;
+# Ürün Özellikleri
 
 Adventure, Platform, Survival, Third Person, Low Poly
 
@@ -26,4 +26,4 @@ Adventure, Platform, Survival, Third Person, Low Poly
 Genel Kitle
 
 ## Product Backlog URL
-[https://](https://unity-48.atlassian.net/jira/core/projects/U48/summary?atlOrigin=eyJpIjoiNzM0MTE5YTFhYThmNGI0ZmI1MmNiMWMyMWYxOWExYTAiLCJwIjoiaiJ9)
+[Jira](https://unity-48.atlassian.net/jira/core/projects/U48/summary?atlOrigin=eyJpIjoiNzM0MTE5YTFhYThmNGI0ZmI1MmNiMWMyMWYxOWExYTAiLCJwIjoiaiJ9)
