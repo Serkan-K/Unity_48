@@ -19,15 +19,17 @@ _Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir l
 
 # Oyun Özellikleri
 
-- Adventure 
-- Platform
-- Survival
-- Third Person
+- 3D, isometric
+- Single Player
+- Adventure, Platform, Mystery, Survival
 - Low Poly
 
 
 # Hedef Kitle
 - Genel Kitle
+- Macera, gizem, platform ve hikâyeli oyun sevenler
+- 11+
+- Pc, Konsol, Mobile platformları
 
 
 ## Product Backlog URL
