@@ -1,6 +1,6 @@
 ![title](https://github.com/Serkan-K/Unity_48/assets/125659165/de1c83ce-f56a-40de-af70-1034916785ba)
 
-# Unity_48                      
+# [![Typing SVG](https://readme-typing-svg.demolab.com?font=&pause=1000&color=F7F7F7&background=FFFFFF26&center=true&vCenter=true&random=false&width=500&lines=Unity+48)](https://git.io/typing-svg)                    
 
 ## Takım Rolleri
 
@@ -34,10 +34,11 @@ _Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir l
 [Jira](https://unity-48.atlassian.net/jira/core/projects/U48/summary?atlOrigin=eyJpIjoiNzM0MTE5YTFhYThmNGI0ZmI1MmNiMWMyMWYxOWExYTAiLCJwIjoiaiJ9)
 
 - - - -
+- - - -
 # Sprint 1
 
 <details>
-           <summary>Title 1</summary>
+           <summary>Ekran Görüntüleri </summary>
            <p> -Content 1 
 - Content 2 
 - Content 3 
