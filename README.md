@@ -1,33 +1,31 @@
 # Unity_48
 
+## Takım Rolleri
 
-Ürün İle İlgili Bilgiler;
-
-Takım Elemanları:
-
-Serkan Kılıç: Scrum Master/Developer
-Şebnem Tan: Product Owner/Developer/3D Artist
-Seydi Dağlı: Team Member/Developer/Game Developer
-Seyfullah Korkmaz: Team Member/Developer/Game Developer
-Şeyma Giritli: Team Member/Level Designer
+- [@Serkan Kılıç](https://www.) Scrum Master / 
+- [@Şebnem Tan](https://www.) Product Owner / 3D Artist
+- [@Seydi Dağlı](https://www.) Developer / 
+- [@Seyfullah Korkmaz](https://www.) Developer / 
+- [@Şeyma Giritli](https://www.) Developer / Level Designer
 
 
-Ürün İsmi;
+# Ürün İsmi
+Lamp Boy
 
-
-Ürün Açıklaması;
+# Ürün Açıklaması;
 
 
 
 
-Ürün Özellikleri;
+# Ürün Özellikleri;
 
 Adventure, Platform, Survival
 Third Person
 Low Poly
 
 
-Hedef Kitle
+# Hedef Kitle
 Genel Kitle
 
-Product Backlog URL
+## Product Backlog URL
+https://unity-48.atlassian.net/issues/?jql=project+%3D+%22U48%22+ORDER+BY+created+DESC&atlOrigin=eyJpIjoiN2IzNTMyY2Q2NzM1NDIwYzgwMzIyN2Q2NmFkOTYyY2EiLCJwIjoiaiJ9
