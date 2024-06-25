@@ -12,12 +12,10 @@
 
 
 # Ürün İsmi
-Lamp Boy
+Lost Lamp
 
 # Ürün Açıklaması
-
-
-
+Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir lamba yakıcısının yürek burkan hikayesi. Annesi hasta, babası ölmüş, kız kardeşi ise kayıp...  Umutları tükenmek üzereyken, bir gece karanlık bir sır perdesini aralayacak. Tehlikeli bir yeraltı dünyasına adım atan bu cesur çocuk, kız kardeşini bulmak için her şeyi riske atacak.
 
 # Ürün Özellikleri
 
