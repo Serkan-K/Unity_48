@@ -1,4 +1,4 @@
-![Designer--4](https://github.com/Serkan-K/Unity_48/assets/125659165/f9ac962b-b6ec-4548-ab4c-985917e62f59)
+![Designer--4](https://github.com/Serkan-K/Unity_48/assets/125659165/98357c87-ffbe-484d-bbeb-060f61975047)
 
 # Unity_48
 
