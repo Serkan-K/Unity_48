@@ -19,13 +19,11 @@ Lamp Boy
 
 # Ürün Özellikleri;
 
-Adventure, Platform, Survival
-Third Person
-Low Poly
+Adventure, Platform, Survival, Third Person, Low Poly
 
 
 # Hedef Kitle
 Genel Kitle
 
 ## Product Backlog URL
-https://unity-48.atlassian.net/issues/?jql=project+%3D+%22U48%22+ORDER+BY+created+DESC&atlOrigin=eyJpIjoiN2IzNTMyY2Q2NzM1NDIwYzgwMzIyN2Q2NmFkOTYyY2EiLCJwIjoiaiJ9
+[https://](https://unity-48.atlassian.net/jira/core/projects/U48/summary?atlOrigin=eyJpIjoiNzM0MTE5YTFhYThmNGI0ZmI1MmNiMWMyMWYxOWExYTAiLCJwIjoiaiJ9)
