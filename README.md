@@ -1,6 +1,6 @@
-![Designer--4](https://github.com/Serkan-K/Unity_48/assets/125659165/98357c87-ffbe-484d-bbeb-060f61975047)
 
-# Unity_48
+
+# Unity_48 ![Designer--4](https://github.com/Serkan-K/Unity_48/assets/125659165/98357c87-ffbe-484d-bbeb-060f61975047)
 
 ## Takım Rolleri
 
