@@ -22,13 +22,10 @@ _Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir l
 - 3D, isometric
 - Single Player
 - Adventure, Platform, Mystery, Survival
-- Low Poly
-
 
 # Hedef Kitle
-- Genel Kitle
+- Genel Kitle (11+)
 - Macera, gizem, platform ve hikâyeli oyun sevenler
-- 11+
 - Pc, Konsol, Mobile platformları
 
 
