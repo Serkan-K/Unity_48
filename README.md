@@ -4,10 +4,10 @@
 
 ## Takım Rolleri
 
-- _[@Serkan Kılıç]([https://www.](https://www.linkedin.com/in/serkan-klc/))_ _Scrum Master /_ 
+- _[@Serkan Kılıç]([(https://www.linkedin.com/in/serkan-klc/)])_ _Scrum Master /_ 
 - _[@Şebnem Tan](https://www.)_ _Product Owner / 3D Artist_
 - _[@Seydi Dağlı](https://www.)_ _Developer /_
-- _[@Seyfullah Korkmaz]([https://www.](https://www.linkedin.com/in/seyfullah-korkmaz-polestar/))_ _Developer /_ 
+- _[@Seyfullah Korkmaz]([[https://www.](https://www.linkedin.com/in/seyfullah-korkmaz-polestar/))]()_ _Developer /_ 
 - _[@Şeyma Giritli]([https://www.](https://www.linkedin.com/in/seymagrtl2/))_ _Developer / Level Designer_
 
 
