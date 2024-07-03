@@ -15,7 +15,8 @@
 
 
 # Oyun İsmi
-**Lost Lamp**
+## Lost Light ##
+## The Lamplighter ## 
 
 # Oyun Açıklaması
 _Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir lamba yakıcısının yürek burkan hikayesi. Annesi hasta, babası ölmüş, kız kardeşi ise kayıp...  Umutları tükenmek üzereyken, bir gece karanlık bir sır perdesini aralayacak. Tehlikeli bir yeraltı dünyasına adım atan bu cesur çocuk, kız kardeşini bulmak için her şeyi riske atacak._
@@ -45,7 +46,9 @@ _Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir l
 
 
 - - - -
+
 - - - -
+
 # Sprint 1
 
 - Sprint Hedefi: İlk sprint sonunda, oyuncunun gazete dağıtma, lamba yakma ve kanalizasyona giriş bölümlerini tamamlaması hedefleniyor
@@ -55,19 +58,30 @@ _Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir l
 - Daily Scrum: Daily Scrum toplantıları 2-3 günde bir olacak şekilde Discord üzerinden yapılması kararlaştırılıp çoğu ekip üyesinin katılımıyla tamamlanmıştır. Bir Daily Scrum toplantısı örneğinin görüntüsüne aşağıda yer verilmiştir
 ![Ekran görüntüsü 2024-07-01 230825](https://github.com/Serkan-K/Unity_48/assets/125659165/9a890924-c10b-4938-b60a-86609de85ee7)
 
-* Sprint board update;
-- ![Ekran görüntüsü 2024-06-29 151653](https://github.com/Serkan-K/Unity_48/assets/125659165/48a31aed-71b3-4df2-be64-a9d5f491fa95)
-- ![Ekran görüntüsü 2024-06-28 222744](https://github.com/Serkan-K/Unity_48/assets/125659165/40c3f79c-6f2e-462c-957a-ecde5a44a7ff)
+# Sprint board update;
 
-* Sprint review:
+<details>
+           <summary> Ekran Görüntüleri </summary>
+           <p> - ![Ekran görüntüsü 2024-06-29 151653](https://github.com/Serkan-K/Unity_48/assets/125659165/48a31aed-71b3-4df2-be64-a9d5f491fa95/480x270)
+             - ![Ekran görüntüsü 2024-06-28 222744](https://github.com/Serkan-K/Unity_48/assets/125659165/40c3f79c-6f2e-462c-957a-ecde5a44a7ff/480x270)
+             </p>
+         </details>
+
+
+
+
+
+
+
+# Sprint review:
   - İlk sprint için belirlenen hedeflerin %90'ı tamamlanmış olup ikinci sprint başında eksikleri tamamlayarak hedeflerin sarkması planlanmıştır
  
-  * Sprint Retrospective:
-    - Görevlerin yapım süreci, ekip içinde düzene kavuşmuş olup projenin yapımı artan hızıyla beraber devam etmektedir
-    - .
-    - .
+## Sprint Retrospective:
+  - Görevlerin yapım süreci, ekip içinde düzene kavuşmuş olup projenin yapımı artan hızıyla beraber devam etmektedir
+  - .
+  - .
 
-* Product Backlog Url
+# Product Backlog Url
   -
 
 
