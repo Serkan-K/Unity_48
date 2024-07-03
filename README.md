@@ -11,7 +11,7 @@
 - [Şeyma Giritli](https://www.linkedin.com/in/seymagrtl2/) - Developer / Level Designer
 
 ## Product Backlog URL
-- [Jira]([https://unity-48.atlassian.net/jira/core/projects/U48/summary?atlOrigin=eyJpIjoiNzM0MTE5YTFhYThmNGI0ZmI1MmNiMWMyMWYxOWExYTAiLCJwIjoiaiJ9/960x540](https://unity-48.atlassian.net/jira/software/projects/UN48/boards/1?atlOrigin=eyJpIjoiMWI3ZGQwOTg4YzBkNDVkODg5NjZlM2M3MzMxYjYyZGMiLCJwIjoiaiJ9))
+- [Jira](https://unity-48.atlassian.net/jira/software/projects/UN48/boards/1?atlOrigin=eyJpIjoiMWI3ZGQwOTg4YzBkNDVkODg5NjZlM2M3MzMxYjYyZGMiLCJwIjoiaiJ9)
 
 ## Oyun İsmi
 
