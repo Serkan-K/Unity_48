@@ -11,9 +11,7 @@
 - [Şeyma Giritli](https://www.linkedin.com/in/seymagrtl2/) - Developer / Level Designer
 
 ## Product Backlog URL
-- https://unity-48.atlassian.net/jira/software/projects/UN48/boards/1?atlOrigin=eyJpIjoiMWI3ZGQwOTg4YzBkNDVkODg5NjZlM2M3MzMxYjYyZGMiLCJwIjoiaiJ9
-
-[Jira](https://unity-48.atlassian.net/jira/core/projects/U48/summary?atlOrigin=eyJpIjoiNzM0MTE5YTFhYThmNGI0ZmI1MmNiMWMyMWYxOWExYTAiLCJwIjoiaiJ9/960x540)
+- [Jira]([https://unity-48.atlassian.net/jira/core/projects/U48/summary?atlOrigin=eyJpIjoiNzM0MTE5YTFhYThmNGI0ZmI1MmNiMWMyMWYxOWExYTAiLCJwIjoiaiJ9/960x540](https://unity-48.atlassian.net/jira/software/projects/UN48/boards/1?atlOrigin=eyJpIjoiMWI3ZGQwOTg4YzBkNDVkODg5NjZlM2M3MzMxYjYyZGMiLCJwIjoiaiJ9))
 
 ## Oyun İsmi
 
@@ -67,7 +65,7 @@ Proje boyunca toplam **X** puan toplanması gereken backlog bulunmaktadır. Üç
 
 Daily Scrum toplantıları 2-3 günde bir Discord üzerinden yapılmış ve çoğu ekip üyesi katılım sağlamıştır. Bir Daily Scrum toplantısı örneği aşağıda verilmiştir:
 
-![Ekran görüntüsü 2024-07-01 230825](https://github.com/Serkan-K/Unity_48/assets/125659165/85bb5a44-5268-4dd1-85a4-a935d90337df)
+![Ekran görüntüsü 1](https://github.com/Serkan-K/Unity_48/assets/125659165/85bb5a44-5268-4dd1-85a4-a935d90337df)
 
 
 ### Sprint Board Güncellemesi
@@ -75,8 +73,8 @@ Daily Scrum toplantıları 2-3 günde bir Discord üzerinden yapılmış ve ço�
 <details>
   <summary>Ekran Görüntüleri</summary>
 
-  - ![Ekran görüntüsü 2024-06-29 151653](https://github.com/Serkan-K/Unity_48/assets/125659165/a509cc25-e8b5-4f93-a210-d3470a785210)
-  - ![Ekran görüntüsü 2024-06-28 222744](https://github.com/Serkan-K/Unity_48/assets/125659165/e4020c3b-a3e6-4670-a02b-48b92dc6ebf3)
+  - ![Ekran görüntüsü 2](https://github.com/Serkan-K/Unity_48/assets/125659165/a509cc25-e8b5-4f93-a210-d3470a785210)
+  - ![Ekran görüntüsü 3](https://github.com/Serkan-K/Unity_48/assets/125659165/e4020c3b-a3e6-4670-a02b-48b92dc6ebf3)
 </details>
 
 ### Sprint Review
@@ -89,7 +87,7 @@ Daily Scrum toplantıları 2-3 günde bir Discord üzerinden yapılmış ve ço�
 - (Diğer önemli noktalar)
 
 ## Product Backlog URL
-- https://unity-48.atlassian.net/jira/software/projects/UN48/boards/1/backlog?atlOrigin=eyJpIjoiNjNkZDdjYjMzYmEwNDdjMDg0NWIzMmZmOTQzZmNlYzYiLCJwIjoiaiJ9
+- - [Jira](https://unity-48.atlassian.net/jira/software/projects/UN48/boards/1/backlog?atlOrigin=eyJpIjoiNjNkZDdjYjMzYmEwNDdjMDg0NWIzMmZmOTQzZmNlYzYiLCJwIjoiaiJ9)
 
 </details>
 
