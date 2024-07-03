@@ -25,15 +25,15 @@ _Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir l
 
 - Macera, gizem, platform, hikâye odaklı
 - Oyun, ana karakteri sokak lambacısı çocuk ile oynanmaktadır
-- Hikaye Odaklı Oynanış: Oyuncunun duygusal olarak bağ kuracağı sürükleyici bir hikaye anlatımı
-- Çarpıcı Atmosfer: Viktorya dönemi Londra'sının karanlık ve gizemli atmosferini yansıtan detaylı görseller
+- **Hikaye Odaklı Oynanış:** Oyuncunun duygusal olarak bağ kuracağı sürükleyici bir hikaye anlatımı
+- **Çarpıcı Atmosfer:** Viktorya dönemi Londra'sının karanlık ve gizemli atmosferini yansıtan detaylı görseller
 - Oyunun müzikleri ve ses efektleri atmosferi güçlendirecek şekilde özenle seçilecek
   
 - Çeşitli Mekanikler:
-- Gazete Dağıtma: Oyunun başında temel gelir kaynağı ve eğitim aracı olarak gazete dağıtma görevleri.
-- Lamba Yakma: Akşamları sokak lambalarını yakarak hem atmosferi değiştirme hem de ipuçları bulma.
-- Platform: Kanalizasyon ve yeraltı dünyasında zorlu platform bölümleri.
-- Gizem Çözme: İpuçlarını takip ederek kız kardeşin yerini bulmak için bulmacalar ve gizemler.
+- **Gazete Dağıtma:** Oyunun başında temel gelir kaynağı ve eğitim aracı olarak gazete dağıtma görevleri.
+- **Lamba Yakma:** Akşamları sokak lambalarını yakarak hem atmosferi değiştirme hem de ipuçları bulma.
+- **Platform:** Kanalizasyon ve yeraltı dünyasında zorlu platform bölümleri.
+- **Gizem Çözme:** İpuçlarını takip ederek kız kardeşin yerini bulmak için bulmacalar ve gizemler.
 - 
 
 # Hedef Kitle
@@ -54,8 +54,8 @@ _Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir l
 - Sprint Hedefi: İlk sprint sonunda, oyuncunun gazete dağıtma, lamba yakma ve kanalizasyona giriş bölümlerini tamamlaması hedefleniyor
 
   
-- Puan toplama mantığı: Proje boyunca "**" puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünene bu projede ilk sprint için "**" puanlık kısmının halledilmesi planlanmıştır
-- Daily Scrum: Daily Scrum toplantıları 2-3 günde bir olacak şekilde Discord üzerinden yapılması kararlaştırılıp çoğu ekip üyesinin katılımıyla tamamlanmıştır. Bir Daily Scrum toplantısı örneğinin görüntüsüne aşağıda yer verilmiştir
+- **Puan toplama mantığı:** Proje boyunca "**" puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünene bu projede ilk sprint için "**" puanlık kısmının halledilmesi planlanmıştır
+- **Daily Scrum:** Daily Scrum toplantıları 2-3 günde bir olacak şekilde Discord üzerinden yapılması kararlaştırılıp çoğu ekip üyesinin katılımıyla tamamlanmıştır. Bir Daily Scrum toplantısı örneğinin görüntüsüne aşağıda yer verilmiştir
 ![Ekran görüntüsü 2024-07-01 230825](https://github.com/Serkan-K/Unity_48/assets/125659165/9a890924-c10b-4938-b60a-86609de85ee7)
 
 # Sprint board update;
