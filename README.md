@@ -50,7 +50,10 @@ _Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir l
 ### Sprint Süreci
 
 - **Puan Toplama Mantığı:** Proje boyunca toplam \*\* puan toplanması hedefleniyor. İlk sprint için \*\* puanlık kısım tamamlandı.
-- **Daily Scrum:** 2-3 günde bir Discord üzerinden düzenli toplantılar yapıldı. (Ekran görüntüsü eklenebilir)
+- **Daily Scrum:** 2-3 günde bir Discord üzerinden düzenli toplantılar yapıldı.
+<details>
+![Ekran görüntüsü 2024-07-01 230825](https://github.com/Serkan-K/Unity_48/assets/125659165/9a890924-c10b-4938-b60a-86609de85ee7)
+</details>
 
 ### Sprint Board
 
