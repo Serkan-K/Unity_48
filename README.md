@@ -11,6 +11,7 @@
 - [Şeyma Giritli](https://www.linkedin.com/in/seymagrtl2/) - Developer / Level Designer
 
 ## Product Backlog URL
+- https://unity-48.atlassian.net/jira/software/projects/UN48/boards/1?atlOrigin=eyJpIjoiMWI3ZGQwOTg4YzBkNDVkODg5NjZlM2M3MzMxYjYyZGMiLCJwIjoiaiJ9
 
 [Jira](https://unity-48.atlassian.net/jira/core/projects/U48/summary?atlOrigin=eyJpIjoiNzM0MTE5YTFhYThmNGI0ZmI1MmNiMWMyMWYxOWExYTAiLCJwIjoiaiJ9/960x540)
 
@@ -88,8 +89,7 @@ Daily Scrum toplantıları 2-3 günde bir Discord üzerinden yapılmış ve ço�
 - (Diğer önemli noktalar)
 
 ## Product Backlog URL
-
-(Product Backlog URL'si)
+- https://unity-48.atlassian.net/jira/software/projects/UN48/boards/1/backlog?atlOrigin=eyJpIjoiNjNkZDdjYjMzYmEwNDdjMDg0NWIzMmZmOTQzZmNlYzYiLCJwIjoiaiJ9
 
 </details>
 
