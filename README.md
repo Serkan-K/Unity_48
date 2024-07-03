@@ -43,8 +43,7 @@ _Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir l
 - Mobil, PC ve konsol platformlarında kaliteli oyun arayanlar.
 
 ## İlham Kaynakları
-
-Inside, Limbo, Little Nightmares
+- Inside, Limbo, Little Nightmares
 
  - - - -
 # 
