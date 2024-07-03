@@ -53,11 +53,11 @@ _Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir l
   
 - Puan toplama mantığı: Proje boyunca "**" puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünene bu projede ilk sprint için "**" puanlık kısmının halledilmesi planlanmıştır
 - Daily Scrum: Daily Scrum toplantıları 2-3 günde bir olacak şekilde Discord üzerinden yapılması kararlaştırılıp çoğu ekip üyesinin katılımıyla tamamlanmıştır. Bir Daily Scrum toplantısı örneğinin görüntüsüne aşağıda yer verilmiştir
-
+![Ekran görüntüsü 2024-07-01 230825](https://github.com/Serkan-K/Unity_48/assets/125659165/9a890924-c10b-4938-b60a-86609de85ee7)
 
 * Sprint board update;
-- image
-- image
+- ![Ekran görüntüsü 2024-06-29 151653](https://github.com/Serkan-K/Unity_48/assets/125659165/48a31aed-71b3-4df2-be64-a9d5f491fa95)
+- ![Ekran görüntüsü 2024-06-28 222744](https://github.com/Serkan-K/Unity_48/assets/125659165/40c3f79c-6f2e-462c-957a-ecde5a44a7ff)
 
 * Sprint review:
   - İlk sprint için belirlenen hedeflerin %90'ı tamamlanmış olup ikinci sprint başında eksikleri tamamlayarak hedeflerin sarkması planlanmıştır
