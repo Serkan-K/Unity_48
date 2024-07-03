@@ -49,8 +49,10 @@ _Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir l
 # 
  - - - -
 
-## Sprint 1
+    
+# Sprint 1
 
+<details>
 ### Sprint Hedefi
 
 İlk sprint sonunda, oyuncunun gazete dağıtma, lamba yakma ve kanalizasyona giriş bölümlerini tamamlaması hedefleniyor.
@@ -87,3 +89,4 @@ Daily Scrum toplantıları 2-3 günde bir Discord üzerinden yapılmış ve ço�
 ## Product Backlog URL
 
 (Product Backlog URL'si)
+</details>
