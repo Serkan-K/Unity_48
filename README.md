@@ -11,7 +11,7 @@
 - [Şeyma Giritli](https://www.linkedin.com/in/seymagrtl2/) - Developer / Level Designer
 
 ## Product Backlog URL
-[Jira](https://unity-48.atlassian.net/jira/core/projects/U48/summary?atlOrigin=eyJpIjoiNzM0MTE5YTFhYThmNGI0ZmI1MmNiMWMyMWYxOWExYTAiLCJwIjoiaiJ9)
+[Jira](https://unity-48.atlassian.net/jira/core/projects/U48/summary?atlOrigin=eyJpIjoiNzM0MTE5YTFhYThmNGI0ZmI1MmNiMWMyMWYxOWExYTAiLCJwIjoiaiJ9/960x540)
 
 
 # Oyun İsmi
@@ -61,11 +61,12 @@ _Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir l
 # Sprint board update;
 
 <details>
-           <summary> Ekran Görüntüleri </summary>
-           <p> - ![Ekran görüntüsü 2024-06-29 151653](https://github.com/Serkan-K/Unity_48/assets/125659165/48a31aed-71b3-4df2-be64-a9d5f491fa95/480x270)
-             - ![Ekran görüntüsü 2024-06-28 222744](https://github.com/Serkan-K/Unity_48/assets/125659165/40c3f79c-6f2e-462c-957a-ecde5a44a7ff/480x270)
-             </p>
-         </details>
+  <summary>Ekran Görüntüleri</summary>
+
+  - ![Ekran görüntüsü 2024-06-29 151653](https://github.com/Serkan-K/Unity_48/assets/125659165/48a31aed-71b3-4df2-be64-a9d5f491fa95/480x270)
+  - ![Ekran görüntüsü 2024-06-28 222744](https://github.com/Serkan-K/Unity_48/assets/125659165/40c3f79c-6f2e-462c-957a-ecde5a44a7ff/480x270)
+</details>
+
 
 
 
