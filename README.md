@@ -10,6 +10,8 @@
 - [Seyfullah Korkmaz](https://www.linkedin.com/in/seyfullah-korkmaz-polestar/) - Developer
 - [Şeyma Giritli](https://www.linkedin.com/in/seymagrtl2/) - Developer / Level Designer
 
+## Product Backlog URL
+[Jira](https://unity-48.atlassian.net/jira/core/projects/U48/summary?atlOrigin=eyJpIjoiNzM0MTE5YTFhYThmNGI0ZmI1MmNiMWMyMWYxOWExYTAiLCJwIjoiaiJ9)
 
 
 # Oyun İsmi
@@ -20,29 +22,80 @@ _Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir l
 
 # Oyun Özellikleri
 
-- 3D, isometric
-- Single Player
-- Adventure, Platform, Mystery, Survival
+- Macera, gizem, platform, hikâye odaklı
+- Oyun, ana karakteri sokak lambacısı çocuk ile oynanmaktadır
+- Hikaye Odaklı Oynanış: Oyuncunun duygusal olarak bağ kuracağı sürükleyici bir hikaye anlatımı
+- Çarpıcı Atmosfer: Viktorya dönemi Londra'sının karanlık ve gizemli atmosferini yansıtan detaylı görseller
+- Oyunun müzikleri ve ses efektleri atmosferi güçlendirecek şekilde özenle seçilecek
+  
+- Çeşitli Mekanikler:
+- Gazete Dağıtma: Oyunun başında temel gelir kaynağı ve eğitim aracı olarak gazete dağıtma görevleri.
+- Lamba Yakma: Akşamları sokak lambalarını yakarak hem atmosferi değiştirme hem de ipuçları bulma.
+- Platform: Kanalizasyon ve yeraltı dünyasında zorlu platform bölümleri.
+- Gizem Çözme: İpuçlarını takip ederek kız kardeşin yerini bulmak için bulmacalar ve gizemler.
+- 
 
 # Hedef Kitle
 - Genel Kitle (11+)
 - Macera, gizem, platform ve hikâyeli oyun sevenler
-- Pc, Konsol, Mobile platformları
+- Viktorya dönemi atmosferine ilgi duyanlar
+- Mobil, PC ve konsol platformlarında kaliteli oyun arayanlar
+- İlham Kaynakları: Inside, Limbo, Little Nightmares
 
 
-## Product Backlog URL
-[Jira](https://unity-48.atlassian.net/jira/core/projects/U48/summary?atlOrigin=eyJpIjoiNzM0MTE5YTFhYThmNGI0ZmI1MmNiMWMyMWYxOWExYTAiLCJwIjoiaiJ9)
 
 - - - -
 - - - -
 # Sprint 1
 
-<details>
-           <summary>Ekran Görüntüleri </summary>
-           <p> -Content 1 
-- Content 2 
-- Content 3 
-- Content 4 
-- Content 5
-</p>
-         </details>
+- Sprint Hedefi: İlk sprint sonunda, oyuncunun gazete dağıtma, lamba yakma ve kanalizasyona giriş bölümlerini tamamlaması hedefleniyor
+
+  
+- Puan toplama mantığı: Proje boyunca "**" puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünene bu projede ilk sprint için "**" puanlık kısmının halledilmesi planlanmıştır
+- Daily Scrum: Daily Scrum toplantıları 2-3 günde bir olacak şekilde Discord üzerinden yapılması kararlaştırılıp çoğu ekip üyesinin katılımıyla tamamlanmıştır. Bir Daily Scrum toplantısı örneğinin görüntüsüne aşağıda yer verilmiştir
+
+
+* Sprint board update;
+- image
+- image
+
+* Sprint review:
+  - İlk sprint için belirlenen hedeflerin %90'ı tamamlanmış olup ikinci sprint başında eksikleri tamamlayarak hedeflerin sarkması planlanmıştır
+ 
+  * Sprint Retrospective:
+    - Görevlerin yapım süreci, ekip içinde düzene kavuşmuş olup projenin yapımı artan hızıyla beraber devam etmektedir
+    - .
+    - .
+
+* Product Backlog Url
+  -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
