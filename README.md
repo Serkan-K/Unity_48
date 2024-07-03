@@ -5,7 +5,7 @@
 ## Takım Rolleri
 
 - [Serkan Kılıç](https://www.linkedin.com/in/serkan-klc/) - Scrum Master
-- [Şebnem Tan]((https://www.linkedin.com/in/%C5%9Febnem-tan/)) - Product Owner / 3D Artist
+- [Şebnem Tan](https://www.linkedin.com/in/%C5%9Febnem-tan/) - Product Owner / 3D Artist
 - [Seydi Dağlı](https://www.linkedin.com/in/seydidagli/) - Developer
 - [Seyfullah Korkmaz](https://www.linkedin.com/in/seyfullah-korkmaz-polestar/) - Developer
 - [Şeyma Giritli](https://www.linkedin.com/in/seymagrtl2/) - Developer / Level Designer
