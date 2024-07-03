@@ -16,7 +16,7 @@
 
 ## Oyun İsmi
 
-**Lost Light** veya **The Lamplighter** (Hangisi daha uygunsa seçebilirsiniz)
+**Lost Light** veya **The Lamplighter**
 
 ## Oyun Açıklaması
 
