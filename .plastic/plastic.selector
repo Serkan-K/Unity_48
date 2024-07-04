@@ -1,0 +1,4 @@
+repository "Lost Light@Lamp_Game@cloud"
+  path "/"
+    br "/main"
+    co "/main"
