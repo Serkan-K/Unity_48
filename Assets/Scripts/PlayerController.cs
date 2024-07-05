@@ -6,7 +6,10 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     PlayerInput playerInput;
-    InputAction moveAction, runAction, jumpAction, sneakAction;
+    InputAction moveAction;
+    InputAction runAction;
+    InputAction jumpAction;
+    InputAction sneakAction;
     Animator boy;
     Rigidbody rb;
 
@@ -14,11 +17,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float runSpeed = 10;
     [SerializeField] float jumpForce = 5;
     [SerializeField] float sneakSpeed = 2;
-    //  bool isWalking = false;
     bool isRunning = false;
     bool isJumping = false;
     bool isSneaking = false;
-
 
     void Start()
     {
@@ -30,7 +31,6 @@ public class PlayerController : MonoBehaviour
         boy = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
 
-        // Rigidbody bileþeninin var olup olmadýðýný kontrol edin
         if (rb == null)
         {
             Debug.LogError("No Rigidbody component found on " + gameObject.name);
@@ -38,53 +38,23 @@ public class PlayerController : MonoBehaviour
         else
         {
             rb.useGravity = true; // Ensure gravity is enabled
+            rb.isKinematic = false; // Ensure isKinematic is disabled
         }
     }
 
-
     void Update()
     {
+        HandleInput();
         MovePlayer();
         HandleJump();
     }
 
-    void MovePlayer()
+    void HandleInput()
     {
-        Vector2 direction = moveAction.ReadValue<Vector2>();
-        float currentSpeed;
-
-        if (isSneaking)
-        {
-            currentSpeed = sneakSpeed;
-        }
-        else if (isRunning)
-        {
-            currentSpeed = runSpeed;
-        }
-        else
-        {
-            currentSpeed = walkSpeed;
-        }
-
-        Vector3 movement = new Vector3(direction.x, 0, direction.y) * (currentSpeed * Time.deltaTime);
-        transform.position += movement;
-
-        if (movement != Vector3.zero)
-        {
-            boy.SetBool("isWalking", true);
-            boy.SetBool("isRunning", isRunning);
-            boy.SetBool("isSneaking", isSneaking);
-        }
-        else
-        {
-            boy.SetBool("isWalking", false);
-            boy.SetBool("isRunning", false);
-            boy.SetBool("isSneaking", false);
-        }
-
         if (runAction.ReadValue<float>() > 0)
         {
             isRunning = true;
+            isSneaking = false; // Sneak ve koþma ayný anda çalýþmamalý
         }
         else
         {
@@ -94,11 +64,36 @@ public class PlayerController : MonoBehaviour
         if (sneakAction.ReadValue<float>() > 0)
         {
             isSneaking = true;
+            isRunning = false; // Sneak ve koþma ayný anda çalýþmamalý
         }
         else
         {
             isSneaking = false;
         }
+    }
+
+    void MovePlayer()
+    {
+        Vector2 direction = moveAction.ReadValue<Vector2>();
+        float currentSpeed = walkSpeed;
+
+        if (isSneaking)
+        {
+            currentSpeed = sneakSpeed;
+        }
+        else if (isRunning)
+        {
+            currentSpeed = runSpeed;
+        }
+
+        Vector3 movement = new Vector3(direction.x, 0, direction.y) * currentSpeed * Time.deltaTime;
+        rb.MovePosition(transform.position + movement);
+
+        bool isMoving = movement != Vector3.zero;
+
+        boy.SetBool("isWalking", isMoving && !isRunning && !isSneaking);
+        boy.SetBool("isRunning", isMoving && isRunning);
+        boy.SetBool("isSneaking", isMoving && isSneaking);
     }
 
     void HandleJump()
@@ -113,7 +108,6 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        // Assuming the ground is tagged as "Ground"
         if (collision.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
