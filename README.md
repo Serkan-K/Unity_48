@@ -19,7 +19,7 @@
 
 ## Oyun Açıklaması
 
-_Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir lamba yakıcısının yürek burkan hikayesi. Annesi hasta, babası ölmüş, kız kardeşi ise kayıp... Umutları tükenmek üzereyken, bir gece karanlık bir sır perdesini aralayacak. Tehlikeli bir yeraltı dünyasına adım atan bu cesur çocuk, kız kardeşini bulmak için her şeyi riske atacak._
+_Lost Light, Viktorya dönemi Londra'sının karanlık sokaklarında geçen, duygusal bir yolculuğa çıkaran hikaye odaklı bir macera oyunudur. Kayıp kız kardeşini arayan küçük bir lamba yakıcısının gözünden anlatılan oyun, oyuncuları umut, kayıp ve kardeşlik temalarıyla dolu sürükleyici bir hikayenin içine çekiyor. Detaylı görsellerle dönemin atmosferini başarıyla yansıtan oyun, gazete dağıtma, lamba yakma, platform ve gizem çözme gibi çeşitli oynanış öğeleriyle zenginleştirilmiş bir deneyim sunuyor. Oyuncular, ana karakterin zorluklarla mücadelesine tanık olurken, Londra'nın karanlık sırlarını keşfetmek için ipuçlarını takip edecek ve kayıp kız kardeşin izini sürecek._
 
 ## Oyun Özellikleri
 
