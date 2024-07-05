@@ -48,7 +48,7 @@ _Viktorya dönemi Londra'sının acımasız soğuk sokaklarında, küçük bir l
 
 ---
 
-## Sprint 1 (Başlangıç Tarihi - Bitiş Tarihi)
+## Sprint 1
 
 <details>
 <summary>Sprint 1 Raporu</summary>
@@ -120,7 +120,7 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 
 ---
 
-## Sprint 2 (Başlangıç Tarihi - Bitiş Tarihi)
+## Sprint 2
 
 <details>
 <summary>Sprint 2 Raporu</summary>
@@ -139,7 +139,7 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 
 ---
 
-## Sprint 3 (Başlangıç Tarihi - Bitiş Tarihi)
+## Sprint 3
 
 <details>
 <summary>Sprint 3 Raporu</summary>
