@@ -77,10 +77,10 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 <details>
 <summary>Daily Scrum Görüntüleri</summary>
 
-![Ekran görüntüsü 2024-07-01 230825](https://github.com/Serkan-K/Unity_48/assets/125659165/ff789753-1713-4059-afa2-8bdf8aca88b4)
-![Ekran görüntüsü 2024-07-05 211122](https://github.com/Serkan-K/Unity_48/assets/125659165/e0d036f4-fc03-4510-b473-5a3174207903)
-![Ekran görüntüsü 2024-07-05 211301](https://github.com/Serkan-K/Unity_48/assets/125659165/12260e0c-98e4-40db-8ce1-b2590348998f)
-![Ekran görüntüsü 2024-07-05 211337](https://github.com/Serkan-K/Unity_48/assets/125659165/834a020a-2b61-4d86-b05b-9d34164b7474)
+![Ekran görüntüsü 2024-07-01 230825](https://github.com/Serkan-K/Unity_48/assets/125659165/ff789753-1713-4059-afa2-8bdf8aca88b4){width=400px height=200px}
+![Ekran görüntüsü 2024-07-05 211122](https://github.com/Serkan-K/Unity_48/assets/125659165/e0d036f4-fc03-4510-b473-5a3174207903){width=400px height=200px}
+![Ekran görüntüsü 2024-07-05 211301](https://github.com/Serkan-K/Unity_48/assets/125659165/12260e0c-98e4-40db-8ce1-b2590348998f){width=400px height=200px}
+![Ekran görüntüsü 2024-07-05 211337](https://github.com/Serkan-K/Unity_48/assets/125659165/834a020a-2b61-4d86-b05b-9d34164b7474){width=400px height=200px}
 
 
 </details>
@@ -90,7 +90,7 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 <details>
 <summary>Sprint Board Ekran Görüntüsü</summary>
 
-![Ekran görüntüsü 2024-07-05 210352](https://github.com/Serkan-K/Unity_48/assets/125659165/ed9b9f49-97c1-425e-9add-a54402995419)
+![Ekran görüntüsü 2024-07-05 210352](https://github.com/Serkan-K/Unity_48/assets/125659165/ed9b9f49-97c1-425e-9add-a54402995419){width=400px height=200px}
 
 
 </details>
