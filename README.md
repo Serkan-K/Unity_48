@@ -28,11 +28,12 @@ _Lost Light, Viktorya dönemi Londra'sının karanlık sokaklarında geçen, duy
 - **Hikaye Odaklı Oynanış:** Oyuncunun duygusal olarak bağ kuracağı sürükleyici bir hikaye anlatımı.
 - **Çarpıcı Atmosfer:** Viktorya dönemi Londra'sının karanlık ve gizemli atmosferini yansıtan detaylı görseller.
 - **Müzik ve Ses Efektleri:** Atmosferi güçlendirecek şekilde özenle seçilmiş müzikler ve ses efektleri.
+
 - **Çeşitli Mekanikler:**
-  - **Gazete Dağıtma:** Oyunun başında temel gelir kaynağı ve eğitim aracı.
-  - **Lamba Yakma:** Akşamları sokak lambalarını yakarak atmosferi değiştirme ve ipuçları bulma.
-  - **Platform:** Kanalizasyon ve yeraltı dünyasında zorlu platform bölümleri.
-  - **Gizem Çözme:** İpuçlarını takip ederek kız kardeşin yerini bulmak için bulmacalar ve gizemler.
+- **Gazete Dağıtma:** Oyunun başında temel gelir kaynağı ve eğitim aracı.
+- **Lamba Yakma:** Akşamları sokak lambalarını yakarak atmosferi değiştirme ve ipuçları bulma.
+- **Platform:** Kanalizasyon ve yeraltı dünyasında zorlu platform bölümleri.
+- **Gizem Çözme:** İpuçlarını takip ederek kız kardeşin yerini bulmak için bulmacalar ve gizemler.
 
 ## Hedef Kitle
 
