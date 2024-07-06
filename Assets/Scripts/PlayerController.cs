@@ -6,10 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     PlayerInput playerInput;
-    InputAction moveAction;
-    InputAction runAction;
-    InputAction jumpAction;
-    InputAction sneakAction;
+    InputAction moveAction, runAction, jumpAction, sneakAction;
     Animator boy;
     Rigidbody rb;
 
