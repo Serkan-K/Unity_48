@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         if (runAction.ReadValue<float>() > 0)
         {
             isRunning = true;
-            isSneaking = false; // Sneak ve koþma ayný anda çalýþmamalý
+            isSneaking = false; // Sneak ve koÅŸma aynÄ± anda olmamalÄ±
         }
         else
         {
@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
         if (sneakAction.ReadValue<float>() > 0)
         {
             isSneaking = true;
-            isRunning = false; // Sneak ve koþma ayný anda çalýþmamalý
+            isRunning = false; // Sneak ve koÅŸma aynÄ± anda olmamalÄ±
         }
         else
         {
