@@ -17,11 +17,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce = 5;
     [SerializeField] float sneakSpeed = 2;
 
+    [SerializeField] private Transform groundCheck;
+
     bool isRunning = false;
     bool isJumping = false;
     bool isSneaking = false;
-
-
 
     private void Awake()
     {
@@ -38,7 +38,6 @@ public class PlayerController : MonoBehaviour
         sneakAction = playerInput.actions.FindAction("Sneak");
 
         if (rb == null) { Debug.LogError("No Rigidbody component found on " + gameObject.name); }
-
     }
 
     void Update()
@@ -48,27 +47,18 @@ public class PlayerController : MonoBehaviour
         HandleJump();
     }
 
-
     void HandleInput()
     {
-        if (runAction.ReadValue<float>() > 0)
-        {
-            isRunning = true;
-            isSneaking = false;
-        }
-        else
-        {
-            isRunning = false;
-        }
+        isRunning = runAction.ReadValue<float>() > 0;
+        isSneaking = sneakAction.ReadValue<float>() > 0;
 
-        if (sneakAction.ReadValue<float>() > 0)
-        {
-            isSneaking = true;
-            isRunning = false;
-        }
-        else
+        if (isRunning)
         {
             isSneaking = false;
+        }
+        else if (isSneaking)
+        {
+            isRunning = false;
         }
     }
 
@@ -86,7 +76,7 @@ public class PlayerController : MonoBehaviour
             currentSpeed = runSpeed;
         }
 
-        Vector3 movement = new Vector3(direction.x, 0, direction.y) * currentSpeed * Time.deltaTime;
+        Vector3 movement = new Vector3(-direction.x, 0, -direction.y) * currentSpeed * Time.deltaTime;
         rb.MovePosition(transform.position + movement);
 
         bool isMoving = movement != Vector3.zero;
@@ -106,9 +96,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
             anim_.SetBool("isJumping", false);
