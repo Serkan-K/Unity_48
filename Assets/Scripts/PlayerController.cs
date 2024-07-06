@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,36 +8,37 @@ public class PlayerController : MonoBehaviour
 {
     PlayerInput playerInput;
     InputAction moveAction, runAction, jumpAction, sneakAction;
-    Animator boy;
+    Animator anim_;
     Rigidbody rb;
+    private Vector2 move_Direction;
 
     [SerializeField] float walkSpeed = 5;
     [SerializeField] float runSpeed = 10;
     [SerializeField] float jumpForce = 5;
     [SerializeField] float sneakSpeed = 2;
+
     bool isRunning = false;
     bool isJumping = false;
     bool isSneaking = false;
 
-    void Start()
+
+
+    private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
+        anim_ = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void Start()
+    {
         moveAction = playerInput.actions.FindAction("Move");
         runAction = playerInput.actions.FindAction("Run");
         jumpAction = playerInput.actions.FindAction("Jump");
         sneakAction = playerInput.actions.FindAction("Sneak");
-        boy = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
 
-        if (rb == null)
-        {
-            Debug.LogError("No Rigidbody component found on " + gameObject.name);
-        }
-        else
-        {
-            rb.useGravity = true; // Ensure gravity is enabled
-            rb.isKinematic = false; // Ensure isKinematic is disabled
-        }
+        if (rb == null) { Debug.LogError("No Rigidbody component found on " + gameObject.name); }
+
     }
 
     void Update()
@@ -46,12 +48,13 @@ public class PlayerController : MonoBehaviour
         HandleJump();
     }
 
+
     void HandleInput()
     {
         if (runAction.ReadValue<float>() > 0)
         {
             isRunning = true;
-            isSneaking = false; // Sneak ve koşma aynı anda olmamalı
+            isSneaking = false;
         }
         else
         {
@@ -61,7 +64,7 @@ public class PlayerController : MonoBehaviour
         if (sneakAction.ReadValue<float>() > 0)
         {
             isSneaking = true;
-            isRunning = false; // Sneak ve koşma aynı anda olmamalı
+            isRunning = false;
         }
         else
         {
@@ -88,9 +91,9 @@ public class PlayerController : MonoBehaviour
 
         bool isMoving = movement != Vector3.zero;
 
-        boy.SetBool("isWalking", isMoving && !isRunning && !isSneaking);
-        boy.SetBool("isRunning", isMoving && isRunning);
-        boy.SetBool("isSneaking", isMoving && isSneaking);
+        anim_.SetBool("isWalking", isMoving && !isRunning && !isSneaking);
+        anim_.SetBool("isRunning", isMoving && isRunning);
+        anim_.SetBool("isSneaking", isMoving && isSneaking);
     }
 
     void HandleJump()
@@ -99,7 +102,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isJumping = true;
-            boy.SetBool("isJumping", true);
+            anim_.SetBool("isJumping", true);
         }
     }
 
@@ -108,7 +111,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
-            boy.SetBool("isJumping", false);
+            anim_.SetBool("isJumping", false);
         }
     }
 }
