@@ -13,9 +13,9 @@
 ## Product Backlog URL
 - [Jira](https://unity-48.atlassian.net/jira/software/projects/UNI48/boards/2?atlOrigin=eyJpIjoiZGU0MjlhMTZkYzNkNDgzNjg3NTkwYjEyM2QwZDgzMGMiLCJwIjoiaiJ9)
 
-## Oyun İsmi
+# Oyun İsmi
 
-**Lost Light** veya **The Lamplighter**
+**Lost Light**
 
 ## Oyun Açıklaması
 
@@ -28,17 +28,16 @@ _Lost Light, Viktorya dönemi Londra'sının karanlık sokaklarında geçen, duy
 - **Hikaye Odaklı Oynanış:** Oyuncunun duygusal olarak bağ kuracağı sürükleyici bir hikaye anlatımı.
 - **Çarpıcı Atmosfer:** Viktorya dönemi Londra'sının karanlık ve gizemli atmosferini yansıtan detaylı görseller.
 - **Müzik ve Ses Efektleri:** Atmosferi güçlendirecek şekilde özenle seçilmiş müzikler ve ses efektleri.
--
 
 - **Çeşitli Mekanikler:**
-- **Gazete Dağıtma:** Oyunun başında temel gelir kaynağı ve eğitim aracı.
-- **Lamba Yakma:** Akşamları sokak lambalarını yakarak atmosferi değiştirme ve ipuçları bulma.
-- **Platform:** Kanalizasyon ve yeraltı dünyasında zorlu platform bölümleri.
-- **Gizem Çözme:** İpuçlarını takip ederek kız kardeşin yerini bulmak için bulmacalar ve gizemler.
+  - **Gazete Dağıtma:** Oyunun başında temel gelir kaynağı ve eğitim aracı.
+  - **Lamba Yakma:** Akşamları sokak lambalarını yakarak atmosferi değiştirme ve ipuçları bulma.
+  - **Platform:** Kanalizasyon ve yeraltı dünyasında zorlu platform bölümleri.
+  - **Gizem Çözme:** İpuçlarını takip ederek kız kardeşin yerini bulmak için bulmacalar ve gizemler.
 
 ## Hedef Kitle
 
-- Genel Kitle (11+)
+- Genel Kitle (PEGI 12)
 - Macera, gizem, platform ve hikaye odaklı oyunları sevenler.
 - Viktorya dönemi atmosferine ilgi duyanlar.
 - Mobil, PC ve konsol platformlarında kaliteli oyun arayanlar.
@@ -61,10 +60,10 @@ _Lost Light, Viktorya dönemi Londra'sının karanlık sokaklarında geçen, duy
 
 ### Sprint Notları (Sprint Backlog)
 
-* **Sprint Not 1:** Gazete dağıtım mekaniğini oluştur.
-* **Sprint Not 2:** Lamba yakma mekaniğini oluştur.
-* **Sprint Not 3:** Kanalizasyon giriş bölümünü tasarla ve oluştur.
-* **Sprint Not 4:** Ana karakter modelini ve animasyonlarını oluştur.
+  - Gazete dağıtım mekaniğini oluştur.
+  - Lamba yakma mekaniğini oluştur.
+  - Kanalizasyon giriş bölümünü tasarla ve oluştur.
+  - Ana karakter modelini ve animasyonlarını oluştur.
 
 ### Puanlama
 
@@ -74,7 +73,10 @@ Proje boyunca toplam **110** puan toplanması gereken backlog bulunmaktadır. Ü
 
 Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine göre belirlenmiştir.
 
-### Daily Scrum
+- - - -
+### Backlog Düzeni
+
+  #### Daily Scrum
 
 <details>
 <summary>Daily Scrum Görüntüleri</summary>
@@ -87,6 +89,7 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 
 </details>
 
+- - - -
 ### Sprint Board Güncellemesi
 
 <details>
@@ -101,22 +104,37 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 ### Oyunda Yapılan İşler
 
 <details>
-<summary>Oyun İçi Ekran Görüntüleri ve Videolar</summary>
+<summary>Oyun İçi Görüntüleri</summary>
 
+#### Unity
 ![LostLight--](https://github.com/Serkan-K/Unity_48/assets/125659165/a1fcbb68-922e-4b54-b958-5f5d08239941)
 ![WhatsApp Görsel 2024-07-05 saat 21 05 00_cec0383b](https://github.com/Serkan-K/Unity_48/assets/125659165/1560b7a1-9860-443e-9581-24af5899d92d)
 
 </details>
 
+<details><summary>Modeller</summary>
+![LostLight--](https://github.com/Serkan-K/Unity_48/assets/125659165/a1fcbb68-922e-4b54-b958-5f5d08239941)
+![WhatsApp Görsel 2024-07-05 saat 21 05 00_cec0383b](https://github.com/Serkan-K/Unity_48/assets/125659165/1560b7a1-9860-443e-9581-24af5899d92d)
+
+</details>
+
+
 ### Sprint Review
 
-İlk sprint için belirlenen hedeflerin %90'ı tamamlanmıştır. Eksikler ikinci sprint başında tamamlanarak hedeflerin sarkmaması planlanmıştır.
+İlk sprint için belirlenen hedeflerin tamamı tamamlanmıştır. İkinci sprinte sarkmayacak şekilde planlanmış ve başarıyla tamamlanmıştır.
+
+![Sprint 1](https://github.com/Serkan-K/Unity_48/assets/125659165/ad700e23-3725-40b2-ab04-2b1b28959653)
+
+
 
 ### Sprint Retrospective
 
 - **Olumlu:** Görevlerin yapım süreci ekip içinde düzene girmiş ve projenin yapımı artan hızla devam etmektedir.
-- **Geliştirilecek:** Bazı görevlerin tahmin edilen süreden daha uzun sürmesi nedeniyle sprint hedefinin tamamı gerçekleştirilememiştir.
+- **Geliştirilecek:** Bazı görevlerin tahmin edilen süreden daha uzun sürmesi nedeniyle sonraki sprint'ler daha planlı ayarlanacaktır.
 - **Aksiyon:** İkinci sprintte daha gerçekçi tahminler yapmaya özen gösterilecektir.
+
+![Sprint calendar](https://github.com/Serkan-K/Unity_48/assets/125659165/df0e8d14-e8de-4e34-a7d1-3d60b3e1f8e1)
+
 
 </details>
 
@@ -158,9 +176,9 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 
 </details>
 
----
+----
 
-## Proje Görselleri
+# Proje
 
 <details>
 <summary>Jira Dashboard</summary>
