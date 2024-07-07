@@ -121,7 +121,7 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 
 ### Sprint Review
 
-İlk sprint için belirlenen hedeflerin %90'ı tamamlanmıştır. Eksikler ikinci sprint başında tamamlanarak hedeflerin sarkmaması planlanmıştır.
+İlk sprint için belirlenen hedeflerin tamamı tamamlanmıştır. İkinci sprinte sarkmayacak şekilde planlanmış ve başarıyla tamamlanmıştır.
 
 ![Sprint 1](https://github.com/Serkan-K/Unity_48/assets/125659165/ad700e23-3725-40b2-ab04-2b1b28959653)
 
@@ -130,10 +130,10 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 ### Sprint Retrospective
 
 - **Olumlu:** Görevlerin yapım süreci ekip içinde düzene girmiş ve projenin yapımı artan hızla devam etmektedir.
-- **Geliştirilecek:** Bazı görevlerin tahmin edilen süreden daha uzun sürmesi nedeniyle sprint hedefinin tamamı gerçekleştirilememiştir.
+- **Geliştirilecek:** Bazı görevlerin tahmin edilen süreden daha uzun sürmesi nedeniyle sonraki sprint'ler daha planlı ayarlanacaktır.
 - **Aksiyon:** İkinci sprintte daha gerçekçi tahminler yapmaya özen gösterilecektir.
 
-- ![Sprint calendar](https://github.com/Serkan-K/Unity_48/assets/125659165/df0e8d14-e8de-4e34-a7d1-3d60b3e1f8e1)
+![Sprint calendar](https://github.com/Serkan-K/Unity_48/assets/125659165/df0e8d14-e8de-4e34-a7d1-3d60b3e1f8e1)
 
 
 </details>
@@ -176,9 +176,9 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 
 </details>
 
----
+----
 
-## Proje Görselleri
+# Proje
 
 <details>
 <summary>Jira Dashboard</summary>
