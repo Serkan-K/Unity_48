@@ -13,9 +13,9 @@
 ## Product Backlog URL
 - [Jira](https://unity-48.atlassian.net/jira/software/projects/UNI48/boards/2?atlOrigin=eyJpIjoiZGU0MjlhMTZkYzNkNDgzNjg3NTkwYjEyM2QwZDgzMGMiLCJwIjoiaiJ9)
 
-## Oyun İsmi
+# Oyun İsmi
 
-**Lost Light** veya **The Lamplighter**
+**Lost Light**
 
 ## Oyun Açıklaması
 
@@ -28,17 +28,16 @@ _Lost Light, Viktorya dönemi Londra'sının karanlık sokaklarında geçen, duy
 - **Hikaye Odaklı Oynanış:** Oyuncunun duygusal olarak bağ kuracağı sürükleyici bir hikaye anlatımı.
 - **Çarpıcı Atmosfer:** Viktorya dönemi Londra'sının karanlık ve gizemli atmosferini yansıtan detaylı görseller.
 - **Müzik ve Ses Efektleri:** Atmosferi güçlendirecek şekilde özenle seçilmiş müzikler ve ses efektleri.
--
 
 - **Çeşitli Mekanikler:**
-- **Gazete Dağıtma:** Oyunun başında temel gelir kaynağı ve eğitim aracı.
-- **Lamba Yakma:** Akşamları sokak lambalarını yakarak atmosferi değiştirme ve ipuçları bulma.
-- **Platform:** Kanalizasyon ve yeraltı dünyasında zorlu platform bölümleri.
-- **Gizem Çözme:** İpuçlarını takip ederek kız kardeşin yerini bulmak için bulmacalar ve gizemler.
+  - **Gazete Dağıtma:** Oyunun başında temel gelir kaynağı ve eğitim aracı.
+  - **Lamba Yakma:** Akşamları sokak lambalarını yakarak atmosferi değiştirme ve ipuçları bulma.
+  - **Platform:** Kanalizasyon ve yeraltı dünyasında zorlu platform bölümleri.
+  - **Gizem Çözme:** İpuçlarını takip ederek kız kardeşin yerini bulmak için bulmacalar ve gizemler.
 
 ## Hedef Kitle
 
-- Genel Kitle (11+)
+- Genel Kitle (PEGI 12)
 - Macera, gizem, platform ve hikaye odaklı oyunları sevenler.
 - Viktorya dönemi atmosferine ilgi duyanlar.
 - Mobil, PC ve konsol platformlarında kaliteli oyun arayanlar.
@@ -61,10 +60,10 @@ _Lost Light, Viktorya dönemi Londra'sının karanlık sokaklarında geçen, duy
 
 ### Sprint Notları (Sprint Backlog)
 
-* **Sprint Not 1:** Gazete dağıtım mekaniğini oluştur.
-* **Sprint Not 2:** Lamba yakma mekaniğini oluştur.
-* **Sprint Not 3:** Kanalizasyon giriş bölümünü tasarla ve oluştur.
-* **Sprint Not 4:** Ana karakter modelini ve animasyonlarını oluştur.
+  - Gazete dağıtım mekaniğini oluştur.
+  - Lamba yakma mekaniğini oluştur.
+  - Kanalizasyon giriş bölümünü tasarla ve oluştur.
+  - Ana karakter modelini ve animasyonlarını oluştur.
 
 ### Puanlama
 
@@ -73,6 +72,8 @@ Proje boyunca toplam **110** puan toplanması gereken backlog bulunmaktadır. Ü
 ### Puan Tamamlama Mantığı
 
 Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine göre belirlenmiştir.
+
+### Backlog Düzeni
 
 ### Daily Scrum
 
