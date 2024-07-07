@@ -2706,8 +2706,8 @@ MonoBehaviour:
   jumpForce: 50
   sneakSpeed: 3
   groundCheck: {fileID: 1406299350}
-  newspaperPrefab: {fileID: 0}
-  throwPoint: {fileID: 0}
+  newspaperPrefab: {fileID: 2114615810621642256, guid: 0fe0d82fb565a6a4eb5c9a7c69c1c105, type: 3}
+  throwPoint: {fileID: 4083501150128938147}
   throwForce: 10
   throwHeightOffset: 1.5
 --- !u!95 &5866666021767538857
