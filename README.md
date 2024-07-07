@@ -75,7 +75,7 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 
 ### Backlog Düzeni
 
-### Daily Scrum
+  #### Daily Scrum
 
 <details>
 <summary>Daily Scrum Görüntüleri</summary>
@@ -102,22 +102,38 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 ### Oyunda Yapılan İşler
 
 <details>
-<summary>Oyun İçi Ekran Görüntüleri ve Videolar</summary>
+<summary>Oyun İçi Görüntüleri</summary>
 
+#### Unity
 ![LostLight--](https://github.com/Serkan-K/Unity_48/assets/125659165/a1fcbb68-922e-4b54-b958-5f5d08239941)
 ![WhatsApp Görsel 2024-07-05 saat 21 05 00_cec0383b](https://github.com/Serkan-K/Unity_48/assets/125659165/1560b7a1-9860-443e-9581-24af5899d92d)
 
 </details>
 
+#### Modeller
+<details>
+![LostLight--](https://github.com/Serkan-K/Unity_48/assets/125659165/a1fcbb68-922e-4b54-b958-5f5d08239941)
+![WhatsApp Görsel 2024-07-05 saat 21 05 00_cec0383b](https://github.com/Serkan-K/Unity_48/assets/125659165/1560b7a1-9860-443e-9581-24af5899d92d)
+
+</details>
+
+
 ### Sprint Review
 
 İlk sprint için belirlenen hedeflerin %90'ı tamamlanmıştır. Eksikler ikinci sprint başında tamamlanarak hedeflerin sarkmaması planlanmıştır.
+
+![Sprint 1](https://github.com/Serkan-K/Unity_48/assets/125659165/ad700e23-3725-40b2-ab04-2b1b28959653)
+
+
 
 ### Sprint Retrospective
 
 - **Olumlu:** Görevlerin yapım süreci ekip içinde düzene girmiş ve projenin yapımı artan hızla devam etmektedir.
 - **Geliştirilecek:** Bazı görevlerin tahmin edilen süreden daha uzun sürmesi nedeniyle sprint hedefinin tamamı gerçekleştirilememiştir.
 - **Aksiyon:** İkinci sprintte daha gerçekçi tahminler yapmaya özen gösterilecektir.
+
+- ![Sprint calendar](https://github.com/Serkan-K/Unity_48/assets/125659165/df0e8d14-e8de-4e34-a7d1-3d60b3e1f8e1)
+
 
 </details>
 
