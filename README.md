@@ -117,7 +117,13 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 
 ### Sprint Review
 
-İlk sprint için belirlenen hedeflerin tamamı tamamlanmıştır. İkinci sprinte sarkmayacak şekilde planlanmış ve başarıyla tamamlanmıştır.
+  - İlk sprint hedeflerinin tamamı başarıyla tamamlanmıştır.
+  - Unity Cloud entegrasyonunun öğrenilmesi ve karakter kontrolünün sıfırdan yazılması gibi önemli gelişmeler kaydedilmiştir.
+  - Animasyon entegrasyonu ve asset araştırması sırasında yaşanan aksaklıklara rağmen proje ilerlemeye devam etmektedir.
+  - Proje için hazır asset araştırması yapıldı ancak uygun ücretsiz asset bulunamadığı ve görsel bütünlük sağlamak amacıyla modelleri Blender ile yapılmış oldu.
+  - Yeni input sistemi, proje için daha sürdürülebilir ve kullanışlı bir çözüm olarak benimsenmiştir.
+  - Gelecek sprintlerde, animasyon süreçlerinin daha detaylı planlanması, Unity Cloud kullanımının pekiştirilmesi ve oyun testlerinin artırılması kararlaştırılmıştır. 
+
 
 ![Sprint 1](https://github.com/Serkan-K/Unity_48/assets/125659165/ad700e23-3725-40b2-ab04-2b1b28959653)
 
