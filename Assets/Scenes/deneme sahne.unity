@@ -18,8 +18,8 @@ RenderSettings:
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.01
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 80
+  m_LinearFogStart: -50
+  m_LinearFogEnd: 50
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -1675,7 +1675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b0719d1c26085f49adbae6afffe91b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.9
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b0719d1c26085f49adbae6afffe91b3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2432,7 +2432,7 @@ Transform:
   m_GameObject: {fileID: 919132149297408105}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.169468, y: 0, z: -33.43}
+  m_LocalPosition: {x: 84, y: 0, z: -33.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3863,7 +3863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 7
-  runSpeed: 12
+  runSpeed: 15
   jumpForce: 50
   sneakSpeed: 3
   groundCheck: {fileID: 1406299350}
