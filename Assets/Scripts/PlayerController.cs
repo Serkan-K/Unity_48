@@ -6,23 +6,31 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    PlayerInput playerInput;
-    InputAction moveAction, runAction, jumpAction, sneakAction;
-    Animator anim_;
-    Rigidbody rb;
-    private Vector2 move_Direction;
 
+    #region Serialize
     [SerializeField] float walkSpeed = 5;
     [SerializeField] float runSpeed = 10;
     [SerializeField] float jumpForce = 5;
     [SerializeField] float sneakSpeed = 2;
 
     [SerializeField] private Transform groundCheck;
+    #endregion
 
+
+    #region Variables
+    PlayerInput playerInput;
+    InputAction moveAction, runAction, jumpAction, sneakAction;
+    Animator anim_;
+    Rigidbody rb;
+    private Vector2 move_Direction;
     bool isRunning = false;
     bool isJumping = false;
     bool isSneaking = false;
+    #endregion
 
+
+
+    #region Main
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -45,8 +53,16 @@ public class PlayerController : MonoBehaviour
         HandleInput();
         MovePlayer();
         HandleJump();
+        Look();
     }
+    #endregion
 
+
+
+
+
+
+    #region Functions
     void HandleInput()
     {
         isRunning = runAction.ReadValue<float>() > 0;
@@ -61,6 +77,11 @@ public class PlayerController : MonoBehaviour
             isRunning = false;
         }
     }
+
+
+
+
+
 
     void MovePlayer()
     {
@@ -86,6 +107,12 @@ public class PlayerController : MonoBehaviour
         anim_.SetBool("isSneaking", isMoving && isSneaking);
     }
 
+
+
+
+
+
+
     void HandleJump()
     {
         if (jumpAction.triggered && !isJumping && rb != null)
@@ -96,6 +123,39 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+
+
+
+    private void Look()
+    {
+        Vector2 moveInput = moveAction.ReadValue<Vector2>();
+
+
+        if (moveInput.sqrMagnitude > 0.1f)
+        {
+            float targetAngle = Mathf.Atan2(-moveInput.x, -moveInput.y) * Mathf.Rad2Deg;
+
+            Quaternion currentRotation = transform.rotation;
+            Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
+            transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, 20f * Time.deltaTime);
+        }
+        else
+            rb.angularVelocity = Vector3.zero;
+    }
+
+
+
+
+
+
+    #endregion
+
+
+
+
+
+    #region Misc
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Ground"))
@@ -104,4 +164,6 @@ public class PlayerController : MonoBehaviour
             anim_.SetBool("isJumping", false);
         }
     }
+    #endregion
+
 }

@@ -3570,6 +3570,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 75811897-2645-4d2e-bed7-5a6ed14e488c
     m_ActionName: Movement/Sneak[/Keyboard/leftCtrl]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 91ad6250-6c62-4285-9a0b-33a44b94ba72
+    m_ActionName: Movement/ThrowPaper[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 57877050-2b96-4ea4-a02e-92b5b51031da
+    m_ActionName: Movement/Lamp[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement
@@ -3583,7 +3591,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148345141343}
   serializedVersion: 4
-  m_Mass: 500
+  m_Mass: 2
   m_Drag: 0.01
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
