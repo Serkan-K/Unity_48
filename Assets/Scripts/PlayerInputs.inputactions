@@ -42,18 +42,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ThrowPaper",
+                    "name": "Throw",
                     "type": "Button",
-                    "id": "91ad6250-6c62-4285-9a0b-33a44b94ba72",
+                    "id": "6dedbf08-2653-4989-982c-d5342477d79d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Lamp",
+                    "name": "ToggleLamp",
                     "type": "Button",
-                    "id": "57877050-2b96-4ea4-a02e-92b5b51031da",
+                    "id": "08508031-1891-4b8f-a40d-953d70b0bc16",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -151,23 +151,23 @@
                 },
                 {
                     "name": "",
-                    "id": "68a28a5d-f87f-4993-a244-6bdb9f41457a",
+                    "id": "7133d4a9-8f61-4f9a-a2bc-3d717b8152c6",
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ThrowPaper",
+                    "action": "Throw",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "fea2c22d-738e-4b70-826d-2896b36ab8e1",
+                    "id": "f090fe9d-3fb6-4910-8b3e-4f9e0a84eaff",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Lamp",
+                    "action": "ToggleLamp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

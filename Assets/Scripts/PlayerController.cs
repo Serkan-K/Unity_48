@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-
     #region Serialize
     [SerializeField] float walkSpeed = 5;
     [SerializeField] float runSpeed = 10;
@@ -14,21 +12,23 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float sneakSpeed = 2;
 
     [SerializeField] private Transform groundCheck;
+    [SerializeField] private GameObject newspaperPrefab;
+    [SerializeField] private Transform throwPoint;
+    [SerializeField] private float throwForce = 10f;
+    [SerializeField] private float throwHeightOffset = 1.5f;
     #endregion
-
 
     #region Variables
     PlayerInput playerInput;
-    InputAction moveAction, runAction, jumpAction, sneakAction;
+    InputAction moveAction, runAction, jumpAction, sneakAction, throwAction, toggleLampAction;
     Animator anim_;
     Rigidbody rb;
     private Vector2 move_Direction;
     bool isRunning = false;
     bool isJumping = false;
     bool isSneaking = false;
+    StreetLampController currentStreetLamp;
     #endregion
-
-
 
     #region Main
     private void Awake()
@@ -44,8 +44,11 @@ public class PlayerController : MonoBehaviour
         runAction = playerInput.actions.FindAction("Run");
         jumpAction = playerInput.actions.FindAction("Jump");
         sneakAction = playerInput.actions.FindAction("Sneak");
+        throwAction = playerInput.actions.FindAction("Throw");
+        toggleLampAction = playerInput.actions.FindAction("ToggleLamp");
 
         if (rb == null) { Debug.LogError("No Rigidbody component found on " + gameObject.name); }
+        toggleLampAction.performed += ctx => ToggleNearestLamp();
     }
 
     void Update()
@@ -54,13 +57,10 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
         HandleJump();
         Look();
+        UpdateThrowPoint();
+        HandleThrow();
     }
     #endregion
-
-
-
-
-
 
     #region Functions
     void HandleInput()
@@ -77,11 +77,6 @@ public class PlayerController : MonoBehaviour
             isRunning = false;
         }
     }
-
-
-
-
-
 
     void MovePlayer()
     {
@@ -107,12 +102,6 @@ public class PlayerController : MonoBehaviour
         anim_.SetBool("isSneaking", isMoving && isSneaking);
     }
 
-
-
-
-
-
-
     void HandleJump()
     {
         if (jumpAction.triggered && !isJumping && rb != null)
@@ -123,14 +112,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-
-
-
     private void Look()
     {
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
-
 
         if (moveInput.sqrMagnitude > 0.1f)
         {
@@ -144,26 +128,76 @@ public class PlayerController : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
     }
 
+    void UpdateThrowPoint()
+    {
+        if (throwPoint != null)
+        {
+            throwPoint.position = transform.position + transform.forward * 1f + Vector3.up * throwHeightOffset; // 1 birim önde ve yukarıda
+            throwPoint.rotation = transform.rotation;
+        }
+    }
 
+    void HandleThrow()
+    {
+        if (throwAction.triggered && newspaperPrefab != null && throwPoint != null)
+        {
+            GameObject newspaper = Instantiate(newspaperPrefab, throwPoint.position, throwPoint.rotation);
+            Rigidbody newspaperRb = newspaper.GetComponent<Rigidbody>();
+            if (newspaperRb != null)
+            {
+                newspaperRb.AddForce(throwPoint.forward * throwForce, ForceMode.Impulse);
+            }
+        }
+    }
 
+    void ToggleNearestLamp()
+    {
+        StreetLampController[] lamps = FindObjectsOfType<StreetLampController>();
+        float closestDistance = Mathf.Infinity;
+        StreetLampController closestLamp = null;
 
+        foreach (StreetLampController lamp in lamps)
+        {
+            float distanceToLamp = Vector3.Distance(transform.position, lamp.transform.position);
+            if (distanceToLamp < closestDistance && distanceToLamp <= lamp.activationDistance)
+            {
+                closestDistance = distanceToLamp;
+                closestLamp = lamp;
+            }
+        }
 
-
+        if (closestLamp != null)
+        {
+            closestLamp.ToggleLamp();
+        }
+    }
     #endregion
 
-
-
-
-
     #region Misc
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
             anim_.SetBool("isJumping", false);
         }
     }
-    #endregion
 
+    void OnTriggerEnter(Collider other)
+    {
+        StreetLampController lamp = other.GetComponent<StreetLampController>();
+        if (lamp != null)
+        {
+            currentStreetLamp = lamp;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (currentStreetLamp != null && other.GetComponent<StreetLampController>() == currentStreetLamp)
+        {
+            currentStreetLamp = null;
+        }
+    }
+    #endregion
 }
