@@ -60,14 +60,14 @@ _Lost Light, Viktorya dönemi Londra'sının karanlık sokaklarında geçen, duy
 
 ### Sprint Notları (Sprint Backlog)
 
-  - Gazete dağıtım mekaniğini oluştur.
-  - Lamba yakma mekaniğini oluştur.
-  - Kanalizasyon giriş bölümünü tasarla ve oluştur.
-  - Ana karakter modelini ve animasyonlarını oluştur.
+  - Gazete dağıtım mekaniğini oluşturuldu
+  - Lamba yakma mekaniğini oluşturuldu
+  - Londra sokakları modellenip eklenmiştir
+  - Ana karakter modeli ve animasyonları oluşturuldu
 
 ### Puanlama
 
-Proje boyunca toplam **110** puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünen projede ilk sprint için **37** puanlık kısmının tamamlanması planlanmıştır. Gerçekleşen puan **11**'dir.
+Proje boyunca toplam **101** puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünen projede ilk sprint için **37** puanlık kısmının tamamlanması planlanmıştır. Tüm hedefler gerçekleştiği için de **37** puanın tamamı toplanmıştır.
 
 ### Puan Tamamlama Mantığı
 
@@ -101,7 +101,7 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 ### Oyunda Yapılan İşler
 
 <details>
-<summary>Oyun İçi Görüntüleri</summary>
+<summary>Oyun İçi Görüntüler</summary>
 
 #### Unity
 ![Lost Light-Sprint1-](https://github.com/Serkan-K/Unity_48/assets/125659165/1468f0cc-38f9-4ffa-966d-f2c3c627cb42)
@@ -128,7 +128,8 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 - **Olumlu:** Görevlerin yapım süreci ekip içinde düzene girmiş ve projenin yapımı artan hızla devam etmektedir.
 - **Geliştirilecek:** Bazı görevlerin tahmin edilen süreden daha uzun sürmesi nedeniyle sonraki sprint'ler daha planlı ayarlanacaktır.
 - **Aksiyon:** İkinci sprintte daha gerçekçi tahminler yapmaya özen gösterilecektir.
-
+  
+#### Günlük görev takvimi
 ![Sprint calendar](https://github.com/Serkan-K/Unity_48/assets/125659165/df0e8d14-e8de-4e34-a7d1-3d60b3e1f8e1)
 
 
