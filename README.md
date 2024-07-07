@@ -73,6 +73,7 @@ Proje boyunca toplam **110** puan toplanması gereken backlog bulunmaktadır. Ü
 
 Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine göre belirlenmiştir.
 
+- - - -
 ### Backlog Düzeni
 
   #### Daily Scrum
@@ -88,6 +89,7 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 
 </details>
 
+- - - -
 ### Sprint Board Güncellemesi
 
 <details>
@@ -110,8 +112,7 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 
 </details>
 
-#### Modeller
-<details>
+<details><summary>Modeller</summary>
 ![LostLight--](https://github.com/Serkan-K/Unity_48/assets/125659165/a1fcbb68-922e-4b54-b958-5f5d08239941)
 ![WhatsApp Görsel 2024-07-05 saat 21 05 00_cec0383b](https://github.com/Serkan-K/Unity_48/assets/125659165/1560b7a1-9860-443e-9581-24af5899d92d)
 
