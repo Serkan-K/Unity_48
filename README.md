@@ -67,7 +67,7 @@ _Lost Light, Viktorya dönemi Londra'sının karanlık sokaklarında geçen, duy
 
 ### Puanlama
 
-Proje boyunca toplam **101** puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünen projede ilk sprint için **37** puanlık kısmının tamamlanması planlanmıştır. Tüm hedefler gerçekleştiği için de **37** puanın tamamı toplanmıştır.
+Proje boyunca toplam **106** puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünen projede ilk sprint için **37** puanlık kısmının tamamlanması planlanmıştır. Tüm hedefler gerçekleştiği için de **37** puanın tamamı toplanmıştır.
 
 ### Puan Tamamlama Mantığı
 
