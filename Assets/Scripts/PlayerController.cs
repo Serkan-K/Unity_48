@@ -18,17 +18,26 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float throwHeightOffset = 1.5f;
     #endregion
 
+
     #region Variables
     PlayerInput playerInput;
     InputAction moveAction, runAction, jumpAction, sneakAction, throwAction, toggleLampAction;
     Animator anim_;
     Rigidbody rb;
-    private Vector2 move_Direction;
-    bool isRunning = false;
-    bool isJumping = false;
-    bool isSneaking = false;
     StreetLampController currentStreetLamp;
+
+
+
+    private Vector2 move_Direction;
+    private IState current_State;
+
+    private bool isWalking, isRunning, isJumping, isSneaking = false;
+    private bool isGrounded;
+
     #endregion
+
+
+
 
     #region Main
     private void Awake()
@@ -40,6 +49,11 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+
+
+
+
+
         moveAction = playerInput.actions.FindAction("Move");
         runAction = playerInput.actions.FindAction("Run");
         jumpAction = playerInput.actions.FindAction("Jump");
@@ -62,7 +76,16 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
+
+
+
+
+
+
+
     #region Functions
+
+
     void HandleInput()
     {
         isRunning = runAction.ReadValue<float>() > 0;
@@ -77,6 +100,12 @@ public class PlayerController : MonoBehaviour
             isRunning = false;
         }
     }
+
+
+
+
+    // -----------------  Hareket ----------------------------------------------------------------
+
 
     void MovePlayer()
     {
@@ -102,16 +131,6 @@ public class PlayerController : MonoBehaviour
         anim_.SetBool("isSneaking", isMoving && isSneaking);
     }
 
-    void HandleJump()
-    {
-        if (jumpAction.triggered && !isJumping && rb != null)
-        {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isJumping = true;
-            anim_.SetBool("isJumping", true);
-        }
-    }
-
     private void Look()
     {
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
@@ -127,6 +146,28 @@ public class PlayerController : MonoBehaviour
         else
             rb.angularVelocity = Vector3.zero;
     }
+
+
+
+    // -----------------  Zıplama  ----------------------------------------------------------------
+
+    void HandleJump()
+    {
+        if (jumpAction.triggered && !isJumping && rb != null)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isJumping = true;
+            anim_.SetBool("isJumping", true);
+        }
+    }
+
+
+
+
+
+
+    // -----------------  Gazete ----------------------------------------------------------------
+
 
     void UpdateThrowPoint()
     {
@@ -150,6 +191,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+
+
+
+    // -----------------  Lamba ----------------------------------------------------------------
+
     void ToggleNearestLamp()
     {
         StreetLampController[] lamps = FindObjectsOfType<StreetLampController>();
@@ -171,9 +218,20 @@ public class PlayerController : MonoBehaviour
             closestLamp.ToggleLamp();
         }
     }
+
+
+
     #endregion
 
+
+
+
+
+
+
     #region Misc
+
+
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))

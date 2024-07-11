@@ -18,6 +18,4 @@ public class IdleState : IState
         Debug.Log("Update Idle state");
     }
 
-
-
 }
