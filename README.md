@@ -60,14 +60,14 @@ _Lost Light, Viktorya dönemi Londra'sının karanlık sokaklarında geçen, duy
 
 ### Sprint Notları (Sprint Backlog)
 
-  - Gazete dağıtım mekaniğini oluştur.
-  - Lamba yakma mekaniğini oluştur.
-  - Kanalizasyon giriş bölümünü tasarla ve oluştur.
-  - Ana karakter modelini ve animasyonlarını oluştur.
+  - Gazete dağıtım mekaniğini oluşturuldu
+  - Lamba yakma mekaniğini oluşturuldu
+  - Londra sokakları modellenip eklenmiştir
+  - Ana karakter modeli ve animasyonları oluşturuldu
 
 ### Puanlama
 
-Proje boyunca toplam **110** puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünen projede ilk sprint için **37** puanlık kısmının tamamlanması planlanmıştır. Gerçekleşen puan **11**'dir.
+Proje boyunca toplam **106** puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünen projede ilk sprint için **37** puanlık kısmının tamamlanması planlanmıştır. Tüm hedefler gerçekleştiği için de **37** puanın tamamı toplanmıştır.
 
 ### Puan Tamamlama Mantığı
 
@@ -81,10 +81,7 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 <details>
 <summary>Daily Scrum Görüntüleri</summary>
   
-![Ekran görüntüsü 2024-07-01 230825](https://github.com/Serkan-K/Unity_48/assets/125659165/ff789753-1713-4059-afa2-8bdf8aca88b4)
-![Ekran görüntüsü 2024-07-05 211122](https://github.com/Serkan-K/Unity_48/assets/125659165/e0d036f4-fc03-4510-b473-5a3174207903)
-![Ekran görüntüsü 2024-07-05 211301](https://github.com/Serkan-K/Unity_48/assets/125659165/12260e0c-98e4-40db-8ce1-b2590348998f)
-![Ekran görüntüsü 2024-07-05 211337](https://github.com/Serkan-K/Unity_48/assets/125659165/834a020a-2b61-4d86-b05b-9d34164b7474)
+![photo-collage png](https://github.com/Serkan-K/Unity_48/assets/125659165/759a5ad3-818c-4632-a967-eca635d42313)
 
 
 </details>
@@ -95,7 +92,7 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 <details>
 <summary>Sprint Board Ekran Görüntüsü</summary>
 
-![Ekran görüntüsü 2024-07-05 212350](https://github.com/Serkan-K/Unity_48/assets/125659165/7e663fe9-ebdd-43f3-bc60-eac91ef97b97)
+![Sprint 1 Backlog ](https://github.com/Serkan-K/Unity_48/assets/125659165/12d3a87b-2be7-4151-9df1-21a2807056db)
 
 
 </details>
@@ -104,24 +101,29 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 ### Oyunda Yapılan İşler
 
 <details>
-<summary>Oyun İçi Görüntüleri</summary>
+<summary>Oyun İçi Görüntüler</summary>
 
 #### Unity
-![LostLight--](https://github.com/Serkan-K/Unity_48/assets/125659165/a1fcbb68-922e-4b54-b958-5f5d08239941)
-![WhatsApp Görsel 2024-07-05 saat 21 05 00_cec0383b](https://github.com/Serkan-K/Unity_48/assets/125659165/1560b7a1-9860-443e-9581-24af5899d92d)
+![Lost Light-Sprint1-](https://github.com/Serkan-K/Unity_48/assets/125659165/1468f0cc-38f9-4ffa-966d-f2c3c627cb42)
 
 </details>
 
 <details><summary>Modeller</summary>
-![LostLight--](https://github.com/Serkan-K/Unity_48/assets/125659165/a1fcbb68-922e-4b54-b958-5f5d08239941)
-![WhatsApp Görsel 2024-07-05 saat 21 05 00_cec0383b](https://github.com/Serkan-K/Unity_48/assets/125659165/1560b7a1-9860-443e-9581-24af5899d92d)
-
+  
+![Blender Buildings ](https://github.com/Serkan-K/Unity_48/assets/125659165/9a0e500d-9975-4479-af40-1a94bb92eb39)
+![Characters ](https://github.com/Serkan-K/Unity_48/assets/125659165/c6a04de0-27e7-42a8-a42a-18ccd61f1689)
 </details>
 
 
 ### Sprint Review
 
-İlk sprint için belirlenen hedeflerin tamamı tamamlanmıştır. İkinci sprinte sarkmayacak şekilde planlanmış ve başarıyla tamamlanmıştır.
+  - İlk sprint hedeflerinin tamamı başarıyla tamamlanmıştır.
+  - Unity Cloud entegrasyonunun öğrenilmesi ve karakter kontrolünün sıfırdan yazılması gibi önemli gelişmeler kaydedilmiştir.
+  - Animasyon entegrasyonu ve asset araştırması sırasında yaşanan aksaklıklara rağmen proje ilerlemeye devam etmektedir.
+  - Proje için hazır asset araştırması yapıldı ancak uygun ücretsiz asset bulunamadığı ve görsel bütünlük sağlamak amacıyla modelleri Blender ile yapılmış oldu.
+  - Yeni input sistemi, proje için daha sürdürülebilir ve kullanışlı bir çözüm olarak benimsenmiştir.
+  - Gelecek sprintlerde, animasyon süreçlerinin daha detaylı planlanması, Unity Cloud kullanımının pekiştirilmesi ve oyun testlerinin artırılması kararlaştırılmıştır. 
+
 
 ![Sprint 1](https://github.com/Serkan-K/Unity_48/assets/125659165/ad700e23-3725-40b2-ab04-2b1b28959653)
 
@@ -132,7 +134,8 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 - **Olumlu:** Görevlerin yapım süreci ekip içinde düzene girmiş ve projenin yapımı artan hızla devam etmektedir.
 - **Geliştirilecek:** Bazı görevlerin tahmin edilen süreden daha uzun sürmesi nedeniyle sonraki sprint'ler daha planlı ayarlanacaktır.
 - **Aksiyon:** İkinci sprintte daha gerçekçi tahminler yapmaya özen gösterilecektir.
-
+  
+#### Günlük görev takvimi
 ![Sprint calendar](https://github.com/Serkan-K/Unity_48/assets/125659165/df0e8d14-e8de-4e34-a7d1-3d60b3e1f8e1)
 
 
