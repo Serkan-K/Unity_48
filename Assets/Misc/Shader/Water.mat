@@ -56,13 +56,16 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _Normal_Strength: 0.2
+    - _Depth: 50
+    - _Depth_Fade: 1
+    - _Normal_Strength: 0.4
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Refraction: 0.01
     - _Smoothness: 0.4
     - _Water_Lerp: 0.5
     m_Colors:
+    - _Color: {r: 0.6398647, g: 0.8415094, b: 0.7684132, a: 0}
     - _UV1: {r: 5, g: 5, b: 0, a: 0}
     - _UV2: {r: 6, g: 6, b: 0, a: 0}
     - _Water_Speed: {r: 0.1, g: 0.1, b: 0, a: 0}
