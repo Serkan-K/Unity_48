@@ -6237,9 +6237,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 10
-  runSpeed: 30
-  jumpForce: 20
-  sneakSpeed: 3
+  runSpeed: 20
+  jumpForce: 10
+  sneakSpeed: 5
   mapCode: 1
   groundCheck: {fileID: 1406299350}
   newspaperPrefab: {fileID: 0}
@@ -6251,7 +6251,7 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 8
-  swimSpeed: 7
+  swimSpeed: 10
   buoyancyForce: 5
   waterLayer:
     serializedVersion: 2
