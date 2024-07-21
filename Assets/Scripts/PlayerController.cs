@@ -334,7 +334,7 @@ public class PlayerController : MonoBehaviour
     public void ApplyBuoyancy()
     {
 
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.1f, waterLayer);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, .1f, waterLayer);
         if (hitColliders.Length > 0)
         {
 
