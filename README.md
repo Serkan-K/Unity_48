@@ -199,7 +199,7 @@ Puanlar, ilk sprintte olduğu gibi her bir görevin karmaşıklığı ve tahmini
 <summary>Oyun İçi Görüntüler</summary>
 
 #### Unity
-![Lost Light-Sprint1-](https://github.com/Serkan-K/Unity_48/assets/125659165/1468f0cc-38f9-4ffa-966d-f2c3c627cb42)
+![Sprint 2](https://github.com/user-attachments/assets/7e5176ef-492c-4d49-871c-bba0bde34b71)
 
 </details>
 
