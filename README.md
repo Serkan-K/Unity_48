@@ -67,7 +67,7 @@ _Lost Light, Viktorya dönemi Londra'sının karanlık sokaklarında geçen, duy
 
 ### Puanlama
 
-Proje boyunca toplam **106** puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünen projede ilk sprint için **37** puanlık kısmının tamamlanması planlanmıştır. Tüm hedefler gerçekleştiği için de **37** puanın tamamı toplanmıştır.
+Proje boyunca toplam **145** puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünen projede ilk sprint için **37** puanlık kısmının tamamlanması planlanmıştır. Tüm hedefler gerçekleştiği için de **37** puanın tamamı toplanmıştır.
 
 ### Puan Tamamlama Mantığı
 
@@ -150,13 +150,87 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 
 ### Sprint Hedefi
 
-[Sprint 2 için Belirlenen Hedefler]
+İkinci sprint sonunda, oyuncunun itme-çekme, yüzme mekanikleri ve kanalizasyon bölümlerinin tamamlaması hedefleniyor.
 
 ### Sprint Notları (Sprint Backlog)
 
-[Sprint 2 için Belirlenen Görevler]
+  - İtme-çekme mekanikleri oluşturuldu
+  - Şehir modellemesi güncellendi
+  - Kanalizasyon modelleri tamamlandı
+  - Yan karakterlerin modellemeleri tamamlandı
 
-[Sprint 2 Raporunun Devamı - Puanlama, Daily Scrum, Sprint Board, Ekran Görüntüleri, Review, Retrospective]
+### Puanlama
+
+Proje boyunca toplam **145** puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünen projede ikinci sprint için **63** puanlık kısmının tamamlanması planlanmıştır. Tüm hedefler gerçekleştiği için de **63** puanın tamamı toplanmıştır.
+
+### Puan Tamamlama Mantığı
+
+Puanlar, ilk sprintte olduğu gibi her bir görevin karmaşıklığı ve tahmini tamamlanma süresine göre belirlenmiştir.
+
+- - - -
+### Backlog Düzeni
+
+  #### Daily Scrum
+
+<details>
+<summary>Daily Scrum Görüntüleri</summary>
+  
+![daily scrum_2](https://github.com/user-attachments/assets/cca386db-b491-428d-8533-e9d5bcc2b522)
+
+
+</details>
+
+- - - -
+### Sprint Board Güncellemesi
+
+<details>
+<summary>Sprint Board Ekran Görüntüsü</summary>
+
+
+![Sprint 2 list ](https://github.com/user-attachments/assets/6f1251fc-9188-4c4b-b1fe-899ff0444e1d)
+
+
+</details>
+
+
+### Oyunda Yapılan İşler
+
+<details>
+<summary>Oyun İçi Görüntüler</summary>
+
+#### Unity
+![Lost Light-Sprint1-](https://github.com/Serkan-K/Unity_48/assets/125659165/1468f0cc-38f9-4ffa-966d-f2c3c627cb42)
+
+</details>
+
+<details><summary>Modeller</summary>
+  
+![blend ](https://github.com/user-attachments/assets/b3f1a6e0-9854-4e4f-b775-cf25870c8d1b)
+![blend 2](https://github.com/user-attachments/assets/fe628297-321b-4220-b842-4379bc7b67a3)
+</details>
+
+
+### Sprint Review
+
+  - İkinci sprint hedeflerinin tamamı başarıyla tamamlanmıştır.
+  - Unity Cloud entegrasyonu ve karakter kontrolünün state machine formatına çevrilmesi gibi önemli gelişmeler kaydedilmiştir.
+  - Proje için yine hazır asset araştırması yapıldı ancak uygun ücretsiz asset bulunamadığı ve görsel bütünlük sağlamak amacıyla modelleri Blender ile yapılmış oldu.
+  - Gelecek sprintte, oyunun tamamlanıp sunum aşamasına geçilmesi planlanmıştır
+
+
+![Burndown](https://github.com/user-attachments/assets/61f89e9f-ec27-4ec3-a9aa-7807c66dabb7)
+
+
+
+### Sprint Retrospective
+
+- **Olumlu:** Görevler tamamlanma süreci ilk sprinte göre daha hızlı olmuştur.
+- **Geliştirilecek:** Bazı görevlerin tahmin edilen süreden daha uzun sürmesi nedeniyle sonraki sprint bu yavaşlığın telafisi yapılacaktır.
+- **Aksiyon:** Son sprintte işlerin daha hızlı tamamlanmasına özen gösterilecektir.
+  
+#### Günlük görev takvimi
+![Sprint 2 calendar ](https://github.com/user-attachments/assets/c3b4385d-6e23-439a-ab35-2815e5401e5b)
+
 
 </details>
 
