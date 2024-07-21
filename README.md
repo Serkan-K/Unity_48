@@ -228,7 +228,7 @@ Puanlar, ilk sprintte olduğu gibi her bir görevin karmaşıklığı ve tahmini
 - **Aksiyon:** Son sprintte işlerin daha hızlı tamamlanmasına özen gösterilecektir.
   
 #### Günlük görev takvimi
-![Sprint 2 calendar ](https://github.com/user-attachments/assets/2521bc70-2928-4bd6-a97d-f9e960e925aa)
+![Sprint 2 calendar ](https://github.com/user-attachments/assets/c3b4385d-6e23-439a-ab35-2815e5401e5b)
 
 
 </details>
