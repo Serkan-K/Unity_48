@@ -187,7 +187,8 @@ Puanlar, ilk sprintte olduğu gibi her bir görevin karmaşıklığı ve tahmini
 <summary>Sprint Board Ekran Görüntüsü</summary>
 
 
-![Sprint 2 list ](https://github.com/user-attachments/assets/10092929-60dd-4353-974e-1fee6ea5c02f)
+![Sprint 2 list ](https://github.com/user-attachments/assets/6f1251fc-9188-4c4b-b1fe-899ff0444e1d)
+
 
 </details>
 
