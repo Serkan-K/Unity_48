@@ -150,7 +150,7 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 
 ### Sprint Hedefi
 
-İkinci sprint sonunda, oyuncunun itme-çekme, yüzme mekanikleri  ve kanalizasyon bölümlerini tamamlaması hedefleniyor.
+İkinci sprint sonunda, oyuncunun itme-çekme, yüzme mekanikleri ve kanalizasyon bölümlerinin tamamlaması hedefleniyor.
 
 ### Sprint Notları (Sprint Backlog)
 
@@ -175,7 +175,7 @@ Puanlar, ilk sprintte olduğu gibi her bir görevin karmaşıklığı ve tahmini
 <details>
 <summary>Daily Scrum Görüntüleri</summary>
   
-![photo-collage png](https://github.com/Serkan-K/Unity_48/assets/125659165/759a5ad3-818c-4632-a967-eca635d42313)
+![daily scrum_2](https://github.com/user-attachments/assets/cca386db-b491-428d-8533-e9d5bcc2b522)
 
 
 </details>
@@ -186,8 +186,8 @@ Puanlar, ilk sprintte olduğu gibi her bir görevin karmaşıklığı ve tahmini
 <details>
 <summary>Sprint Board Ekran Görüntüsü</summary>
 
-![Sprint 1 Backlog ](https://github.com/Serkan-K/Unity_48/assets/125659165/12d3a87b-2be7-4151-9df1-21a2807056db)
 
+![Sprint 2 Backlog](https://github.com/user-attachments/assets/e73d4a23-a452-45ef-87be-d90ac634372f)
 
 </details>
 
@@ -204,8 +204,8 @@ Puanlar, ilk sprintte olduğu gibi her bir görevin karmaşıklığı ve tahmini
 
 <details><summary>Modeller</summary>
   
-![Blender Buildings ](https://github.com/Serkan-K/Unity_48/assets/125659165/9a0e500d-9975-4479-af40-1a94bb92eb39)
-![Characters ](https://github.com/Serkan-K/Unity_48/assets/125659165/c6a04de0-27e7-42a8-a42a-18ccd61f1689)
+![blend ](https://github.com/user-attachments/assets/b3f1a6e0-9854-4e4f-b775-cf25870c8d1b)
+![blend 2](https://github.com/user-attachments/assets/fe628297-321b-4220-b842-4379bc7b67a3)
 </details>
 
 
@@ -217,7 +217,7 @@ Puanlar, ilk sprintte olduğu gibi her bir görevin karmaşıklığı ve tahmini
   - Gelecek sprintte, oyunun tamamlanıp sunum aşamasına geçilmesi planlanmıştır
 
 
-![Sprint 1](https://github.com/Serkan-K/Unity_48/assets/125659165/ad700e23-3725-40b2-ab04-2b1b28959653)
+![Burndown](https://github.com/user-attachments/assets/61f89e9f-ec27-4ec3-a9aa-7807c66dabb7)
 
 
 
@@ -228,7 +228,7 @@ Puanlar, ilk sprintte olduğu gibi her bir görevin karmaşıklığı ve tahmini
 - **Aksiyon:** Son sprintte işlerin daha hızlı tamamlanmasına özen gösterilecektir.
   
 #### Günlük görev takvimi
-![Sprint calendar](https://github.com/Serkan-K/Unity_48/assets/125659165/df0e8d14-e8de-4e34-a7d1-3d60b3e1f8e1)
+![Sprint 2 calendar ](https://github.com/user-attachments/assets/2521bc70-2928-4bd6-a97d-f9e960e925aa)
 
 
 </details>
