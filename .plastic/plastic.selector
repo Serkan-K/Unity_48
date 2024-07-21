@@ -1,4 +1,4 @@
 repository "Lost Light@Lamp_Game@cloud"
   path "/"
-    smartbranch "/main" 
+    smartbranch "/main"  
      

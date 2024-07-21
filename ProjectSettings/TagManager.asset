@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Ground
   - Lamp
+  - Water
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Interactable
   - Water
   - UI
   - 

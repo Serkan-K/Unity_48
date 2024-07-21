@@ -1,20 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JumpState : IState
 {
-    public void EnterState(PlayerController player)
+    private PlayerController player;
+
+    public JumpState(PlayerController player)
     {
-        Debug.Log("Enter Jump state");
-    }
-    public void ExitState(PlayerController player)
-    {
-        Debug.Log("Exit Jump state");
+        this.player = player;
     }
 
-    public void UpdateState(PlayerController player)
+    public void Enter()
     {
-        Debug.Log("Update Jump state");
+        player.GetAnimator().SetBool("isJumping", true);
+        player.GetRigidbody().AddForce(Vector3.up * player.GetJumpForce(), ForceMode.Impulse);
+    }
+
+    public void Execute()
+    {
+        player.CheckMap();
+        if (player.isGrounded)
+        {
+            player.stateMachine.ChangeState(player.idleState);
+        }
+
+    }
+
+    public void Exit()
+    {
+        player.GetAnimator().SetBool("isJumping", false);
     }
 }

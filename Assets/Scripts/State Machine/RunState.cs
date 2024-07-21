@@ -1,20 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RunState : IState
 {
-    public void EnterState(PlayerController player)
+    private PlayerController player;
+
+    public RunState(PlayerController player)
     {
-        Debug.Log("Enter Run state");
-    }
-    public void ExitState(PlayerController player)
-    {
-        Debug.Log("Exit Run state");
+        this.player = player;
     }
 
-    public void UpdateState(PlayerController player)
+    public void Enter()
     {
-        Debug.Log("Update Run state");
+        player.GetAnimator().SetBool("isRunning", true);
+    }
+
+    public void Execute()
+    {
+        player.MovePlayer(player.GetRunSpeed());
+        player.HandleInput();
+        player.CheckMap();
+        if (!player.isRunning)
+        {
+            if (player.isSneaking)
+            {
+                player.stateMachine.ChangeState(player.sneakState);
+            }
+            else if (player.GetMoveAction().ReadValue<Vector2>() == Vector2.zero)
+            {
+                player.stateMachine.ChangeState(player.idleState);
+            }
+            else if (player.isSwimming)
+            {
+                player.stateMachine.ChangeState(player.swimState);
+            }
+            else
+            {
+                player.stateMachine.ChangeState(player.walkState);
+            }
+        }
+    }
+
+    public void Exit()
+    {
+        player.GetAnimator().SetBool("isRunning", false);
     }
 }

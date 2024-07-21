@@ -4,7 +4,31 @@ using UnityEngine;
 
 public interface IState
 {
-    void EnterState(PlayerController player);
-    void UpdateState(PlayerController player);
-    void ExitState(PlayerController player);
+    void Enter();
+    void Execute();
+    void Exit();
+}
+
+public class StateMachine
+{
+    private IState currentState;
+
+    public void ChangeState(IState newState)
+    {
+        if (currentState != null)
+        {
+            currentState.Exit();
+        }
+        currentState = newState;
+        currentState.Enter();
+
+    }
+
+    public void Update()
+    {
+        if (currentState != null)
+        {
+            currentState.Execute();
+        }
+    }
 }
