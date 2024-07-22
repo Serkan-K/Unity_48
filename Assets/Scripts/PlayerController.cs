@@ -36,6 +36,12 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+
+
+
+
+
+
     #region Variables
     private PlayerInput playerInput;
     private InputActionAsset inputActions;
@@ -46,17 +52,30 @@ public class PlayerController : MonoBehaviour
     private Rigidbody objectBeingMoved;
     private Vector2 move_Direction;
     private CapsuleCollider sneakCollider;
+    private GroundCheck ground_control_;
+
+
 
     public StateMachine stateMachine { get; private set; }
     public IState idleState, walkState, runState, sneakState, jumpState, swimState;
 
     public bool isRunning { get; set; }
     public bool isSneaking { get; set; } = false;
-    public bool isGrounded { get; private set; }
+    public bool isGrounded { get; set; }
+
+
     private bool isPulling;
     public bool isSwimming { get; set; } = false;
 
     #endregion
+
+
+
+
+
+
+
+
 
 
     #region Main
@@ -66,7 +85,8 @@ public class PlayerController : MonoBehaviour
         anim_ = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         sneakCollider = GetComponent<CapsuleCollider>();
-        
+        ground_control_ = GetComponent<GroundCheck>();
+
 
         idleState = new IdleState(this);
         walkState = new WalkState(this);
@@ -127,7 +147,18 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
+
+
+
+
+
+
+
+
+
+
     #region Functions
+
     public void HandleInput()
     {
         isRunning = runAction.ReadValue<float>() > 0;
@@ -154,6 +185,14 @@ public class PlayerController : MonoBehaviour
     }
 
 
+
+
+
+
+
+
+
+
     public void MovePlayer(float speed)
     {
         if (isSwimming)
@@ -171,20 +210,33 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public Animator GetAnimator()
-    {
-        return anim_;
-    }
 
-    public InputAction GetMoveAction()
-    {
-        return moveAction;
-    }
+
+
+
+
+
+    public Animator GetAnimator() { return anim_; }
+
+    public InputAction GetMoveAction() { return moveAction; }
+
 
     public void SetInputActionMap(string actionMapName)
     {
         playerInput.SwitchCurrentActionMap(actionMapName);
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
     private void Look()
     {
@@ -224,6 +276,21 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     void HandleThrow()
     {
         if (throwAction.triggered && newspaperPrefab != null && throwPoint != null)
@@ -237,6 +304,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     void UpdateThrowPoint()
     {
         if (throwPoint != null)
@@ -245,6 +326,20 @@ public class PlayerController : MonoBehaviour
             throwPoint.rotation = transform.rotation;
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     void ToggleNearestLamp()
     {
@@ -267,6 +362,22 @@ public class PlayerController : MonoBehaviour
             closestLamp.ToggleLamp();
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     void HandleInteraction()
     {
@@ -305,6 +416,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     private void MoveObject()
     {
         if (objectBeingMoved == null) return;
@@ -341,26 +471,45 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * buoyancyForce, ForceMode.Acceleration);
         }
     }
+
+
+
+
     #endregion
 
+
+
+
+
+
+
+
+
+
     #region Misc
-    void OnCollisionEnter(Collision collision)
+
+
+    private void Ground_Control()
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (ground_control_.ground_Contr)
         {
             isGrounded = true;
             stateMachine.ChangeState(idleState);
-
+            //isFalling = false;
         }
-    }
-
-    void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
+        else if (!ground_control_.ground_Contr)
         {
             isGrounded = false;
+            //isFalling = true;
         }
     }
+
+
+
+
+
+
+
 
     void OnTriggerEnter(Collider other)
     {
@@ -396,6 +545,14 @@ public class PlayerController : MonoBehaviour
             currentStreetLamp = null;
         }
     }
+
+
+
+
+
+
+
+
     public float GetMap() => mapCode;
 
     public void CheckMap()
@@ -407,6 +564,12 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
+
+
+
+
+
+
 }
 
 
