@@ -14,14 +14,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float sneakSpeed = 2;
     [SerializeField] float mapCode = 1;
     //[SerializeField] private Transform groundCheck;
-
-    
     [Space(20)]
     [SerializeField] private GameObject newspaperPrefab;
     [SerializeField] private float throwForce = 10f;
     [SerializeField] private float throwHeightOffset = 1.5f;
     [SerializeField] private float interactionRange = 2f;
-    [SerializeField] private LayerMask interactableLayer;
     [Space(3)]
     [Header("Swim")]
     [SerializeField] float swimSpeed = 3;
@@ -62,6 +59,7 @@ public class PlayerController : MonoBehaviour
     private CapsuleCollider sneakCollider;
     private Transform interactionPoint;
     private Transform throwPoint;
+    private LayerMask interactableLayer;
     private GroundCheck ground_control_;
 
 

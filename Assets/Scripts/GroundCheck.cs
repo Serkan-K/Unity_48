@@ -7,6 +7,12 @@ public class GroundCheck : MonoBehaviour
     public float maxDistance = 1;
     public bool ground_Control;
 
+    //protected string object_Tag;
+     
+
+
+
+
     RaycastHit hit;
 
     void FixedUpdate()
@@ -16,13 +22,40 @@ public class GroundCheck : MonoBehaviour
             Vector3.down, out hit, transform.rotation, maxDistance);
 
         //Debug.Log("Is Grounded: " + ground_Control);
-        
-        
+
+
+        //object_Tag = hit.collider.gameObject.tag;
+
+
+
+
+
         if (ground_Control)
         {
-            Debug.Log("Deðilen " + hit.collider.gameObject.name + " " + hit.collider.gameObject.tag);
+            Debug.Log("Temas edilen " + hit.collider.gameObject.name + " " + hit.collider.gameObject.tag);
         }
+
+        //if (object_Tag == "Water")
+        //{
+        //    //Swim
+        //}
+        //else if(object_Tag == "Ground")
+        //{
+        //    //canJump
+        //}
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     public void OnDrawGizmos()
