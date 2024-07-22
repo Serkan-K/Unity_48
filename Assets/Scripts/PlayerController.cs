@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
 
     #region Serialize
-    [Header("Değerler")]
+    [Header("Values")]
     [SerializeField] float walkSpeed = 5;
     [SerializeField] float runSpeed = 10;
     [SerializeField] float jumpForce = 5;
@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float mapCode = 1;
     //[SerializeField] private Transform groundCheck;
 
+    
     [Space(20)]
     [SerializeField] private GameObject newspaperPrefab;
     [SerializeField] private float throwForce = 10f;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [Space(3)]
     [Header("Swim")]
     [SerializeField] float swimSpeed = 3;
+    [Tooltip("Kaldırma kuvveti")]
     [SerializeField] float buoyancyForce = 10f;
     [SerializeField] LayerMask waterLayer;
 
@@ -175,7 +177,7 @@ public class PlayerController : MonoBehaviour
         HandleThrow();
         HandleInteraction();
         HandleInput();
-        Ground_Control();
+        //Ground_Control();
     }
 
 
@@ -526,13 +528,13 @@ public class PlayerController : MonoBehaviour
 
     private void Ground_Control()
     {
-        if (ground_control_.ground_Contr)
+        if (ground_control_.ground_Control)
         {
             isGrounded = true;
             stateMachine.ChangeState(idleState);
             //isFalling = false;
         }
-        else if (!ground_control_.ground_Contr)
+        else if (!ground_control_.ground_Control)
         {
             isGrounded = false;
             //isFalling = true;

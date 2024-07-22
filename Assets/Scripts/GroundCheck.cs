@@ -5,25 +5,30 @@ using UnityEngine;
 public class GroundCheck : MonoBehaviour
 {
     public float maxDistance = 1;
-    public bool ground_Contr;
+    public bool ground_Control;
 
     RaycastHit hit;
 
     void FixedUpdate()
     {
 
-        ground_Contr = Physics.BoxCast(transform.position, transform.lossyScale / 2,
+        ground_Control = Physics.BoxCast(transform.position, transform.lossyScale / 2,
             Vector3.down, out hit, transform.rotation, maxDistance);
 
-
-        //Debug.Log("Is Grounded: " + ground_Contr);
+        //Debug.Log("Is Grounded: " + ground_Control);
+        
+        
+        if (ground_Control)
+        {
+            Debug.Log("Deðilen " + hit.collider.gameObject.name + " " + hit.collider.gameObject.tag);
+        }
     }
 
 
     public void OnDrawGizmos()
     {
 
-        if (ground_Contr)
+        if (ground_Control)
         {
             Gizmos.color = Color.magenta;
             Gizmos.DrawRay(transform.position, Vector3.down * maxDistance);
