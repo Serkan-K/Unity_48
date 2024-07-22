@@ -5,24 +5,30 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+
     #region Serialize
+    [Header("Değerler")]
     [SerializeField] float walkSpeed = 5;
     [SerializeField] float runSpeed = 10;
     [SerializeField] float jumpForce = 5;
     [SerializeField] float sneakSpeed = 2;
     [SerializeField] float mapCode = 1;
+    //[SerializeField] private Transform groundCheck;
 
-    [SerializeField] private Transform groundCheck;
+    [Space(20)]
     [SerializeField] private GameObject newspaperPrefab;
-    [SerializeField] private Transform throwPoint;
     [SerializeField] private float throwForce = 10f;
     [SerializeField] private float throwHeightOffset = 1.5f;
-    [SerializeField] private Transform interactionPoint;
     [SerializeField] private float interactionRange = 2f;
     [SerializeField] private LayerMask interactableLayer;
+    [Space(3)]
+    [Header("Swim")]
     [SerializeField] float swimSpeed = 3;
     [SerializeField] float buoyancyForce = 10f;
     [SerializeField] LayerMask waterLayer;
+
+
+
     public float GetJumpForce() => jumpForce;
 
     public float GetWalkSpeed() => walkSpeed;
@@ -52,6 +58,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody objectBeingMoved;
     private Vector2 move_Direction;
     private CapsuleCollider sneakCollider;
+    private Transform interactionPoint;
+    private Transform throwPoint;
     private GroundCheck ground_control_;
 
 
@@ -62,9 +70,7 @@ public class PlayerController : MonoBehaviour
     public bool isRunning { get; set; }
     public bool isSneaking { get; set; } = false;
     public bool isGrounded { get; set; }
-
-
-    private bool isPulling;
+    private bool isPulling {  get; set; }
     public bool isSwimming { get; set; } = false;
 
     #endregion
@@ -79,6 +85,8 @@ public class PlayerController : MonoBehaviour
 
 
     #region Main
+
+
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -101,8 +109,18 @@ public class PlayerController : MonoBehaviour
         interactionPoint.SetParent(transform);
         interactionPoint.localPosition = new Vector3(0, 0, 1.5f);
     }
+
+
+
     public Rigidbody GetRigidbody() => rb;
     public CapsuleCollider GetCollider() => sneakCollider;
+
+
+
+
+
+
+
 
     void Start()
     {
@@ -118,22 +136,22 @@ public class PlayerController : MonoBehaviour
         playerInput.actions.FindActionMap("Water");
         swimAction = playerInput.actions.FindAction("Swim");
         SetInputActionMap("Movement");
+
+
+
         if (rb == null) { Debug.LogError("No Rigidbody component found on " + gameObject.name); }
         toggleLampAction.performed += ctx => ToggleNearestLamp();
 
         stateMachine.ChangeState(idleState);
     }
 
+
+
     void Update()
     {
-        Vector2 swimInput = swimAction.ReadValue<Vector2>();
-        Debug.Log(swimInput);
+
         stateMachine.Update();
-        Look();
-        UpdateThrowPoint();
-        HandleThrow();
-        HandleInteraction();
-        HandleInput();
+
 
         if (!isRunning && !isSneaking && !isSwimming && objectBeingMoved != null)
         {
@@ -145,6 +163,23 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+
+
+
+
+    private void FixedUpdate()
+    {
+        Look();
+        UpdateThrowPoint();
+        HandleThrow();
+        HandleInteraction();
+        HandleInput();
+        Ground_Control();
+    }
+
+
+
     #endregion
 
 

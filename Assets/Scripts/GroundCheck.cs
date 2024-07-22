@@ -5,25 +5,25 @@ using UnityEngine;
 public class GroundCheck : MonoBehaviour
 {
     public float maxDistance = 1;
-    public bool isGrounded;
+    public bool ground_Contr;
+
     RaycastHit hit;
 
-    void Update()
+    void FixedUpdate()
     {
 
-        isGrounded = Physics.BoxCast(transform.position, transform.lossyScale / 2,
+        ground_Contr = Physics.BoxCast(transform.position, transform.lossyScale / 2,
             Vector3.down, out hit, transform.rotation, maxDistance);
 
 
-        Debug.Log("Is Grounded: " + isGrounded);
+        //Debug.Log("Is Grounded: " + ground_Contr);
     }
+
 
     public void OnDrawGizmos()
     {
-        bool isHit = Physics.BoxCast(transform.position, transform.lossyScale / 2,
-            Vector3.down, out hit, transform.rotation, maxDistance);
 
-        if (isHit)
+        if (ground_Contr)
         {
             Gizmos.color = Color.magenta;
             Gizmos.DrawRay(transform.position, Vector3.down * maxDistance);
