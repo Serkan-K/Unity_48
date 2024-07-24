@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Kaldırma kuvveti")]
     [SerializeField] float buoyancyForce = 10f;
     [SerializeField] LayerMask waterLayer;
+    
 
 
 
@@ -61,6 +62,7 @@ public class PlayerController : MonoBehaviour
     private Transform throwPoint;
     private LayerMask interactableLayer;
     private GroundCheck ground_control_;
+
 
 
 
@@ -170,12 +172,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Ground_Control();
         Look();
         UpdateThrowPoint();
         HandleThrow();
         HandleInteraction();
         HandleInput();
-        //Ground_Control();
     }
 
 
@@ -199,24 +201,33 @@ public class PlayerController : MonoBehaviour
         isRunning = runAction.ReadValue<float>() > 0;
         isSneaking = sneakAction.ReadValue<float>() > 0;
 
-        if (isRunning)
+        if (isGrounded)
         {
-            isSneaking = false;
+            if (isRunning)
+            {
+                isSneaking = false;
+            }
+            else if (isSneaking)
+            {
+                isRunning = false;
+            }
+            else if (jumpAction.triggered && isGrounded)
+            {
+                stateMachine.ChangeState(jumpState);
+            }
         }
-        else if (isSneaking)
-        {
-            isRunning = false;
-        }
+        
 
-        if (jumpAction.triggered && isGrounded)
-        {
-            stateMachine.ChangeState(jumpState);
-        }
 
-        if (isSwimming)
+        else if (isSwimming && !isGrounded)
         {
             stateMachine.ChangeState(swimState);
         }
+
+        //else if (isFalling)
+        //{
+        //    stateMachine.ChangeState(fallState);
+        //}
     }
 
 
@@ -526,18 +537,32 @@ public class PlayerController : MonoBehaviour
 
     private void Ground_Control()
     {
-        if (ground_control_.ground_Control)
+        if (ground_control_ == null)
+        {
+            Debug.LogError("GroundCheck component not found!"); 
+            return;                                            
+        }
+
+        if (ground_control_._walk)
         {
             isGrounded = true;
+            isSwimming = false;
             stateMachine.ChangeState(idleState);
-            //isFalling = false;
         }
-        else if (!ground_control_.ground_Control)
+        else if (ground_control_._swim)
         {
             isGrounded = false;
-            //isFalling = true;
+            isSwimming = true;
+            stateMachine.ChangeState(swimState);
+        }
+        else
+        {
+            // stateMachine.ChangeState(fallState);  // Fall state varsa buraya ekleyin
+            isGrounded = false;
+            isSwimming = false;
         }
     }
+
 
 
 

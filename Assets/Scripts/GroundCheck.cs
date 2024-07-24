@@ -4,50 +4,56 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
-    public float maxDistance = 1;
-    public bool ground_Control;
-
-    //protected string object_Tag;
-     
-
-
+    public float maxDistance = .5f;
+    public float rayOffset = 1;
+    private bool _hit;
+    public bool _walk, _swim, _fall;
 
 
     RaycastHit hit;
 
+
+
+
     void FixedUpdate()
     {
+        Vector3 rayOrigin = transform.position;
+        rayOrigin.y += rayOffset;
 
-        ground_Control = Physics.BoxCast(transform.position, transform.lossyScale / 2,
+
+        _hit = Physics.BoxCast(rayOrigin, transform.lossyScale / 2,
             Vector3.down, out hit, transform.rotation, maxDistance);
 
-        //Debug.Log("Is Grounded: " + ground_Control);
-
-
-        //object_Tag = hit.collider.gameObject.tag;
-
-
-
-
-
-        if (ground_Control)
+        if (_hit)
         {
-            Debug.Log("Temas edilen " + hit.collider.gameObject.name + " " + hit.collider.gameObject.tag);
+            Debug.Log("Temas edilen: " + hit.collider.gameObject.name
+                + " ( " + hit.collider.gameObject.tag + ")");
+
+
+            if (hit.collider.gameObject.CompareTag("Ground"))
+            {
+                //canJump;
+                _walk = true;
+                _swim = false;
+                _fall = false;
+                Debug.Log("Yürüyor");
+            }
+            else if (hit.collider.gameObject.CompareTag("Water"))
+            {
+                _swim = true;
+                _fall = false;
+                _walk = false;
+                Debug.Log("Yüzüyor");
+            }
         }
-
-        //if (object_Tag == "Water")
-        //{
-        //    //Swim
-        //}
-        //else if(object_Tag == "Ground")
-        //{
-        //    //canJump
-        //}
+        else
+        {
+            _fall = true;
+            _walk = false;
+            _swim = false;
+            Debug.Log("Düþüyor");
+        }
     }
-
-
-
-
 
 
 
@@ -61,16 +67,19 @@ public class GroundCheck : MonoBehaviour
     public void OnDrawGizmos()
     {
 
-        if (ground_Control)
+        Vector3 rayOrigin = transform.position;
+        rayOrigin.y += rayOffset;
+
+        if (_hit)
         {
             Gizmos.color = Color.magenta;
-            Gizmos.DrawRay(transform.position, Vector3.down * maxDistance);
-            Gizmos.DrawWireCube(transform.position + Vector3.down * hit.distance, transform.lossyScale / 2);
+            Gizmos.DrawRay(rayOrigin, Vector3.down * maxDistance);
+            Gizmos.DrawWireCube(rayOrigin + Vector3.down * hit.distance, transform.lossyScale / 2);
         }
         else
         {
             Gizmos.color = Color.cyan;
-            Gizmos.DrawRay(transform.position, Vector3.down * maxDistance);
+            Gizmos.DrawRay(rayOrigin, Vector3.down * maxDistance);
         }
     }
 }
