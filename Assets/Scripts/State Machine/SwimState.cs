@@ -29,7 +29,7 @@ public class SwimState : IState
 
         player.MovePlayer(player.GetSwimSpeed());
         player.HandleInput();
-        player.ApplyBuoyancy();
+        //player.ApplyBuoyancy();
         //yukarýdaki methoda bak kuvvet uygulamalý. 
         // yüzme look yonunda olmalý ok
 

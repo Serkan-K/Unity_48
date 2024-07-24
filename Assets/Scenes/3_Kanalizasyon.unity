@@ -881,7 +881,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.05870514, y: -0.9399467, z: 0.21037862, w: 0.2622876}
-  m_LocalPosition: {x: 5.007311, y: 33.595566, z: -51.81921}
+  m_LocalPosition: {x: 121.65731, y: 33.595566, z: -51.81921}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1879,7 +1879,7 @@ Transform:
   m_GameObject: {fileID: 919132148345141343}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.35, y: 18.56, z: -77.64}
+  m_LocalPosition: {x: 120, y: 18.56, z: -77.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6253,18 +6253,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 10
   runSpeed: 30
-  jumpForce: 20
   sneakSpeed: 10
-  mapCode: 2
+  jumpHeight: 10
   newspaperPrefab: {fileID: 0}
   throwForce: 10
   throwHeightOffset: 1.5
   interactionRange: 2
   swimSpeed: 10
-  buoyancyForce: 0
-  waterLayer:
-    serializedVersion: 2
-    m_Bits: 16
 --- !u!114 &5866666020572068005
 MonoBehaviour:
   m_ObjectHideFlags: 0

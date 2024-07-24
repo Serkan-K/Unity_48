@@ -10,9 +10,9 @@ public class PlayerController : MonoBehaviour
     [Header("Values")]
     [SerializeField] float walkSpeed = 5;
     [SerializeField] float runSpeed = 10;
-    [SerializeField] float jumpForce = 5;
+    //[SerializeField] float jumpForce = 5;
     [SerializeField] float sneakSpeed = 2;
-    [SerializeField] float mapCode = 1;
+    [SerializeField] float jumpHeight;
     //[SerializeField] private Transform groundCheck;
     [Space(20)]
     [SerializeField] private GameObject newspaperPrefab;
@@ -22,14 +22,14 @@ public class PlayerController : MonoBehaviour
     [Space(3)]
     [Header("Swim")]
     [SerializeField] float swimSpeed = 3;
-    [Tooltip("Kaldırma kuvveti")]
-    [SerializeField] float buoyancyForce = 10f;
-    [SerializeField] LayerMask waterLayer;
+    //[Tooltip("Kaldırma kuvveti")]
+    //[SerializeField] float buoyancyForce = 10f;
+    //[SerializeField] LayerMask waterLayer;
     
 
 
 
-    public float GetJumpForce() => jumpForce;
+    //public float GetJumpForce() => jumpForce;
 
     public float GetWalkSpeed() => walkSpeed;
 
@@ -63,17 +63,18 @@ public class PlayerController : MonoBehaviour
     private LayerMask interactableLayer;
     private GroundCheck ground_control_;
 
-
+    private float mapCode = 1;
 
 
     public StateMachine stateMachine { get; private set; }
-    public IState idleState, walkState, runState, sneakState, jumpState, swimState;
+    public IState idleState, walkState, runState, sneakState, jumpState, fallState, swimState;
 
     public bool isRunning { get; set; }
     public bool isSneaking { get; set; } = false;
     public bool isGrounded { get; set; }
     private bool isPulling {  get; set; }
     public bool isSwimming { get; set; } = false;
+    public bool isFalling { get; set; }
 
     #endregion
 
@@ -103,6 +104,7 @@ public class PlayerController : MonoBehaviour
         runState = new RunState(this);
         sneakState = new SneakState(this);
         jumpState = new JumpState(this);
+        fallState = new FallState(this);
         swimState = new SwimState(this);
 
         stateMachine = new StateMachine();
@@ -224,10 +226,10 @@ public class PlayerController : MonoBehaviour
             stateMachine.ChangeState(swimState);
         }
 
-        //else if (isFalling)
-        //{
-        //    stateMachine.ChangeState(fallState);
-        //}
+        else if (isFalling)
+        {
+            stateMachine.ChangeState(fallState);
+        }
     }
 
 
@@ -506,16 +508,41 @@ public class PlayerController : MonoBehaviour
             objectBeingMoved.velocity = objectBeingMoved.velocity.normalized * maxSpeed;
         }
     }
-    public void ApplyBuoyancy()
+
+
+
+
+
+
+
+
+    public void Jump()
     {
-
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, .1f, waterLayer);
-        if (hitColliders.Length > 0)
-        {
-
-            rb.AddForce(Vector3.up * buoyancyForce, ForceMode.Acceleration);
-        }
+        rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //public void ApplyBuoyancy()
+    //{
+
+    //    Collider[] hitColliders = Physics.OverlapSphere(transform.position, .1f, waterLayer);
+    //    if (hitColliders.Length > 0)
+    //    {
+
+    //        rb.AddForce(Vector3.up * buoyancyForce, ForceMode.Acceleration);
+    //    }
+    //}
 
 
 
@@ -547,6 +574,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("yürüdü");
             isGrounded = true;
             isSwimming = false;
+            isFalling = false;
             stateMachine.ChangeState(idleState);
             SetInputActionMap("Movement");
             mapCode = 1;
@@ -556,8 +584,9 @@ public class PlayerController : MonoBehaviour
         else if (ground_control_._swim)
         {
             //Debug.Log("yüzdü");
-            isGrounded = false;
             isSwimming = true;
+            isGrounded = false;
+            isFalling = false;
             stateMachine.ChangeState(swimState);
             SetInputActionMap("Water");
             mapCode = 2;
@@ -567,7 +596,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             //Debug.Log("düştü");
-            // stateMachine.ChangeState(fallState);
+            isFalling = true;
             isGrounded = false;
             isSwimming = false;
         }

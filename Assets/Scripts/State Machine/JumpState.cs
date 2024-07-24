@@ -12,7 +12,8 @@ public class JumpState : IState
     public void Enter()
     {
         player.GetAnimator().SetBool("isJumping", true);
-        player.GetRigidbody().AddForce(Vector3.up * player.GetJumpForce(), ForceMode.Impulse);
+        //player.GetRigidbody().AddForce(Vector3.up * player.GetJumpForce(), ForceMode.Impulse);
+        player.Jump();
     }
 
     public void Execute()
@@ -22,11 +23,16 @@ public class JumpState : IState
         {
             player.stateMachine.ChangeState(player.idleState);
         }
+        else if(!player.isGrounded)
+        {
+            player.stateMachine.ChangeState(player.fallState);
+        }
 
     }
 
     public void Exit()
     {
         player.GetAnimator().SetBool("isJumping", false);
+        player.GetAnimator().SetBool("isFalling", true);
     }
 }
