@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerController : MonoBehaviour
 {
@@ -51,7 +52,8 @@ public class PlayerController : MonoBehaviour
     #region Variables
     private PlayerInput playerInput;
     private InputActionAsset inputActions;
-    private InputAction moveAction, runAction, jumpAction, sneakAction, throwAction, toggleLampAction, interactAction, swimAction;
+    [HideInInspector]
+    public InputAction moveAction, runAction, jumpAction, sneakAction, throwAction, toggleLampAction, interactAction, swimAction;
     private Animator anim_;
     private Rigidbody rb;
     private StreetLampController currentStreetLamp;
@@ -157,7 +159,7 @@ public class PlayerController : MonoBehaviour
         stateMachine.Update();
 
 
-        if (!isRunning && !isSneaking && !isSwimming && objectBeingMoved != null)
+        if ((!isRunning && !isSneaking && !isSwimming) && objectBeingMoved != null)
         {
             if (moveAction.ReadValue<Vector2>().sqrMagnitude == 0)
             {
@@ -175,7 +177,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         HandleInput();
-        Look();
+       // Look();
         Ground_Control();
         HandleInteraction();
         UpdateThrowPoint();
@@ -226,7 +228,7 @@ public class PlayerController : MonoBehaviour
             stateMachine.ChangeState(swimState);
         }
 
-        else if (isFalling)
+        else if (isFalling && rb.velocity.y < 0)
         {
             stateMachine.ChangeState(fallState);
         }
@@ -248,12 +250,36 @@ public class PlayerController : MonoBehaviour
             Vector2 directionSwim = swimAction.ReadValue<Vector2>();
             Vector3 movementSwim = new Vector3(-directionSwim.x, 0, -directionSwim.y) * speed * Time.deltaTime;
             rb.MovePosition(transform.position + movementSwim);
+
+
+            if (directionSwim.sqrMagnitude > 0.1f)
+            {
+                float targetAngle = Mathf.Atan2(-directionSwim.x, -directionSwim.y) * Mathf.Rad2Deg;
+
+                Quaternion currentRotation = transform.rotation;
+                Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
+                transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, 20f * Time.deltaTime);
+            }
+            else
+                rb.angularVelocity = Vector3.zero;
+
         }
         else
         {
             Vector2 direction = moveAction.ReadValue<Vector2>();
             Vector3 movement = new Vector3(-direction.x, 0, -direction.y) * speed * Time.deltaTime;
             rb.MovePosition(transform.position + movement);
+
+            if (direction.sqrMagnitude > 0.1f)
+            {
+                float targetAngle = Mathf.Atan2(-direction.x, -direction.y) * Mathf.Rad2Deg;
+
+                Quaternion currentRotation = transform.rotation;
+                Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
+                transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, 20f * Time.deltaTime);
+            }
+            else
+                rb.angularVelocity = Vector3.zero;
         }
 
     }
@@ -262,9 +288,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-
-
-    public Animator GetAnimator() { return anim_; }
+public Animator GetAnimator() { return anim_; }
 
     public InputAction GetMoveAction() { return moveAction; }
 
@@ -280,48 +304,6 @@ public class PlayerController : MonoBehaviour
 
 
 
-
-
-
-
-
-
-    private void Look()
-    {
-        if (isSwimming)
-        {
-            //SetInputActionMap("Water");
-            //swimAction = playerInput.actions.FindAction("Swim");
-            Vector2 swimInput = swimAction.ReadValue<Vector2>();
-            if (swimInput.sqrMagnitude > 0.1f)
-            {
-                float targetAngle = Mathf.Atan2(-swimInput.x, -swimInput.y) * Mathf.Rad2Deg;
-
-                Quaternion currentRotation = transform.rotation;
-                Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
-                transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, 20f * Time.deltaTime);
-            }
-            else
-                rb.angularVelocity = Vector3.zero;
-        }
-        else
-        {
-            Vector2 moveInput = moveAction.ReadValue<Vector2>();
-
-            if (moveInput.sqrMagnitude > 0.1f)
-            {
-                float targetAngle = Mathf.Atan2(-moveInput.x, -moveInput.y) * Mathf.Rad2Deg;
-
-                Quaternion currentRotation = transform.rotation;
-                Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
-                transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, 20f * Time.deltaTime);
-            }
-            else
-                rb.angularVelocity = Vector3.zero;
-
-        }
-
-    }
 
 
 
@@ -572,6 +554,7 @@ public class PlayerController : MonoBehaviour
         if (ground_control_._walk)
         {
             //Debug.Log("yürüdü");
+            rb.drag = 0;
             isGrounded = true;
             isSwimming = false;
             isFalling = false;
@@ -596,6 +579,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             //Debug.Log("düştü");
+            rb.drag = 1;
             isFalling = true;
             isGrounded = false;
             isSwimming = false;

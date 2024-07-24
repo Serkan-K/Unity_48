@@ -9,7 +9,6 @@ public class GroundCheck : MonoBehaviour
     private bool _hit;
     public bool _walk, _swim, _fall;
 
-
     RaycastHit hit;
 
 

@@ -18,20 +18,17 @@ public class SwimState : IState
         player.GetRigidbody().velocity = Vector3.zero;
         player.GetAnimator().SetBool("isSwimming", true);
         player.GetRigidbody().useGravity = false;
-        player.GetRigidbody().drag = 2f;
+        player.GetRigidbody().drag = 1;
 
         player.SetInputActionMap("Water");
     }
 
     public void Execute()
     {
-        //Debug.Log("Yüzme state'de");
 
         player.MovePlayer(player.GetSwimSpeed());
         player.HandleInput();
-        //player.ApplyBuoyancy();
-        //yukarýdaki methoda bak kuvvet uygulamalý. 
-        // yüzme look yonunda olmalý ok
+
 
         if (!player.isSwimming)
         {
@@ -63,6 +60,7 @@ public class SwimState : IState
     {
         player.GetAnimator().SetBool("isSwimming", false);
         player.GetRigidbody().useGravity = true;
+        player.GetRigidbody().drag = 0;
     }
 
 }

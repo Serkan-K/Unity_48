@@ -19,6 +19,15 @@ public class RunState : IState
         player.MovePlayer(player.GetRunSpeed());
         player.HandleInput();
         player.CheckMap();
+
+
+
+        if(player.jumpAction.triggered && player.isGrounded)
+        {
+            player.stateMachine.ChangeState(player.jumpState);
+        }
+
+
         if (!player.isRunning)
         {
             if (player.isSneaking)

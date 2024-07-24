@@ -19,11 +19,14 @@ public class JumpState : IState
     public void Execute()
     {
         player.CheckMap();
+        player.HandleInput();
+        player.MovePlayer(player.GetWalkSpeed());
+
         if (player.isGrounded)
         {
             player.stateMachine.ChangeState(player.idleState);
         }
-        else if(!player.isGrounded)
+        else if (!player.isGrounded || player.isFalling)
         {
             player.stateMachine.ChangeState(player.fallState);
         }
