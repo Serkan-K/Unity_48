@@ -172,12 +172,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Ground_Control();
+        HandleInput();
         Look();
+        Ground_Control();
+        HandleInteraction();
         UpdateThrowPoint();
         HandleThrow();
-        HandleInteraction();
-        HandleInput();
     }
 
 
@@ -216,11 +216,11 @@ public class PlayerController : MonoBehaviour
                 stateMachine.ChangeState(jumpState);
             }
         }
-        
-
-
-        else if (isSwimming && !isGrounded)
+      
+        else if (isSwimming)
         {
+            mapCode = 2;
+            SetInputActionMap("Water");
             stateMachine.ChangeState(swimState);
         }
 
@@ -286,7 +286,6 @@ public class PlayerController : MonoBehaviour
 
     private void Look()
     {
-        // karakter bakmıyo
         if (isSwimming)
         {
             //SetInputActionMap("Water");
@@ -545,19 +544,30 @@ public class PlayerController : MonoBehaviour
 
         if (ground_control_._walk)
         {
+            //Debug.Log("yürüdü");
             isGrounded = true;
             isSwimming = false;
             stateMachine.ChangeState(idleState);
+            SetInputActionMap("Movement");
+            mapCode = 1;
+
+
         }
         else if (ground_control_._swim)
         {
+            //Debug.Log("yüzdü");
             isGrounded = false;
             isSwimming = true;
             stateMachine.ChangeState(swimState);
+            SetInputActionMap("Water");
+            mapCode = 2;
+
+
         }
         else
         {
-            // stateMachine.ChangeState(fallState);  // Fall state varsa buraya ekleyin
+            //Debug.Log("düştü");
+            // stateMachine.ChangeState(fallState);
             isGrounded = false;
             isSwimming = false;
         }
@@ -573,14 +583,6 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Water"))
-        {
-            isSwimming = true;
-            stateMachine.ChangeState(swimState);
-            SetInputActionMap("Water");
-            mapCode = 2;
-
-        }
 
         StreetLampController lamp = other.GetComponent<StreetLampController>();
         if (lamp != null)
@@ -591,14 +593,6 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Water"))
-        {
-            isSwimming = false;
-            stateMachine.ChangeState(idleState);
-            SetInputActionMap("Movement");
-            mapCode = 1;
-
-        }
 
         if (currentStreetLamp != null && other.GetComponent<StreetLampController>() == currentStreetLamp)
         {

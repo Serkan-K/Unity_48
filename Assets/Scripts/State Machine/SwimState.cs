@@ -10,8 +10,12 @@ public class SwimState : IState
         this.player = player;
     }
 
+
+
     public void Enter()
     {
+        //Debug.Log("Yüzme state'e geçti");
+        player.GetRigidbody().velocity = Vector3.zero;
         player.GetAnimator().SetBool("isSwimming", true);
         player.GetRigidbody().useGravity = false;
         player.GetRigidbody().drag = 2f;
@@ -21,6 +25,7 @@ public class SwimState : IState
 
     public void Execute()
     {
+        //Debug.Log("Yüzme state'de");
 
         player.MovePlayer(player.GetSwimSpeed());
         player.HandleInput();

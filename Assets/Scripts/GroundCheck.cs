@@ -26,8 +26,8 @@ public class GroundCheck : MonoBehaviour
 
         if (_hit)
         {
-            Debug.Log("Temas edilen: " + hit.collider.gameObject.name
-                + " ( " + hit.collider.gameObject.tag + ")");
+            //Debug.Log("Temas edilen: " + hit.collider.gameObject.name
+            //    + " ( " + hit.collider.gameObject.tag + ")");
 
 
             if (hit.collider.gameObject.CompareTag("Ground"))
@@ -36,14 +36,14 @@ public class GroundCheck : MonoBehaviour
                 _walk = true;
                 _swim = false;
                 _fall = false;
-                Debug.Log("Yürüyor");
+                //Debug.Log("Yürüyor");
             }
             else if (hit.collider.gameObject.CompareTag("Water"))
             {
                 _swim = true;
                 _fall = false;
                 _walk = false;
-                Debug.Log("Yüzüyor");
+                //Debug.Log("Yüzüyor");
             }
         }
         else
@@ -51,7 +51,7 @@ public class GroundCheck : MonoBehaviour
             _fall = true;
             _walk = false;
             _swim = false;
-            Debug.Log("Düþüyor");
+            //Debug.Log("Düþüyor");
         }
     }
 
