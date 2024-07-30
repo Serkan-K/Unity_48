@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lampLight: {fileID: 8484191470331626544}
-  activationDistance: 10
+  activationDistance: 5
 --- !u!65 &7296814088821517286
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -119,8 +119,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.025520286, y: 0.02247436, z: 0.14921246}
-  m_Center: {x: 0, y: 1.0350738e-15, z: 0.07283684}
+  m_Size: {x: 4, y: 4, z: 4}
+  m_Center: {x: 0, y: 0, z: 1}
 --- !u!1 &4389218720077361773
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +161,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4389218720077361773}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0

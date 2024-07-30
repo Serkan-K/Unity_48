@@ -50,13 +50,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Fade: 1
-    - _Fade_distance: 50
+    - _Fade: 0
+    - _Fade_distance: 5000000
     - _Highlight: 1
-    - _Highlight_Speed: 2
+    - _Highlight_Speed: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Scale: 0.001
     m_Colors:
-    - _Color: {r: 0.60421747, g: 1, b: 0.3830188, a: 0}
+    - _Color: {r: 0.83396226, g: 0.674073, b: 0.3383054, a: 0}
   m_BuildTextureStacks: []
