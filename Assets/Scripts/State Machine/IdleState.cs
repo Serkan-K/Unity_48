@@ -17,6 +17,8 @@ public class IdleState : IState
         player.GetAnimator().SetBool("isSneaking", false);
         player.GetAnimator().SetBool("isJumping", false);
         player.GetAnimator().SetBool("isSwimming", false);
+        player.GetAnimator().SetBool("isPulling", false);
+        player.GetAnimator().SetBool("isPushing", false);
 
     }
     public void CheckMap()
@@ -52,6 +54,7 @@ public class IdleState : IState
             {
                 player.stateMachine.ChangeState(player.swimState);
             }
+            // bu nasýl kod
         }
     }
 

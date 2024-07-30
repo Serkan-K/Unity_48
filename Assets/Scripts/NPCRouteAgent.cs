@@ -6,7 +6,7 @@ using Unity.MLAgents.Actuators;
 
 public class NPCRouteAgent : Agent
 {
-    public Transform[] waypoints; // Hedef noktalarý
+    public Transform[] waypoints; // Hedef noktalarï¿½
     private int currentWaypointIndex = 0;
     private NavMeshAgent navMeshAgent;
 
@@ -20,21 +20,21 @@ public class NPCRouteAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        // NPC'yi rastgele bir konuma yerleþtir
+        // NPC'yi rastgele bir konuma yerleï¿½tir
         transform.position = waypoints[Random.Range(0, waypoints.Length)].position;
         SetNextDestination();
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        // Mevcut konum ve hedef waypoint arasýndaki mesafeyi gözle
+        // Mevcut konum ve hedef waypoint arasï¿½ndaki mesafeyi gï¿½zle
         sensor.AddObservation(Vector3.Distance(transform.position, navMeshAgent.destination));
         sensor.AddObservation(navMeshAgent.destination - transform.position);
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
     {
-        // Hedefe ulaþýldý mý?
+        // Hedefe ulaï¿½ï¿½ldï¿½ mï¿½?
         if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance < 1.0f)
         {
             InteractWithEnvironment();
@@ -44,12 +44,12 @@ public class NPCRouteAgent : Agent
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-        // Boþ býrakýldý
+        // Boï¿½ bï¿½rakï¿½ldï¿½
     }
 
     private void SetNextDestination()
     {
-        // Mevcut waypoint'ten bir sonraki waypoint'e geç
+        // Mevcut waypoint'ten bir sonraki waypoint'e geï¿½
         currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
         navMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
     }
@@ -59,7 +59,7 @@ public class NPCRouteAgent : Agent
         Collider[] interactables = Physics.OverlapSphere(transform.position, 1.0f, interactableLayer);
         foreach (var interactable in interactables)
         {
-            // Etkileþim mantýðý burada iþlenir
+            // Etkileï¿½im mantï¿½ï¿½ï¿½ burada iï¿½lenir
             Debug.Log("Interacted with: " + interactable.gameObject.name);
         }
     }

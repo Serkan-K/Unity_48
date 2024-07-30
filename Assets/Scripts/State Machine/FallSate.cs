@@ -12,8 +12,6 @@ public class FallState : IState
 
     public void Enter()
     {
-        //y_vel = player.GetRigidbody().velocity.y;
-        //y_vel = player.GetAnimator().GetFloat("Y_velocity");
         player.GetAnimator().SetBool("isFalling", true);
     }
 

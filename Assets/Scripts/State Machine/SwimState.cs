@@ -53,6 +53,7 @@ public class SwimState : IState
             {
                 player.stateMachine.ChangeState(player.walkState);
             }
+            
         }
     }
 

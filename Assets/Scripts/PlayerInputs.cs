@@ -82,13 +82,22 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Interact"",
-                    ""type"": ""Button"",
+                    ""name"": ""Push"",
+                    ""type"": ""Value"",
                     ""id"": ""b9639b4e-2a16-4e8f-8ad3-7e16c5f8bb78"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""interactions"": ""Hold"",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pull"",
+                    ""type"": ""Value"",
+                    ""id"": ""76c41097-9cc0-4200-a844-7c4c9fb6f5b2"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold"",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -193,23 +202,34 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d44cdbea-8834-4eb5-86a1-00a01b3751e4"",
-                    ""path"": ""<Keyboard>/f"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""2965cce9-6f25-4964-9e6c-00c4211fcbef"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1885db7c-965e-4ac6-8550-9c1ef4ac2616"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pull"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d44cdbea-8834-4eb5-86a1-00a01b3751e4"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Push"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -298,7 +318,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Movement_Jump = m_Movement.FindAction("Jump", throwIfNotFound: true);
         m_Movement_Throw = m_Movement.FindAction("Throw", throwIfNotFound: true);
         m_Movement_ToggleLamp = m_Movement.FindAction("ToggleLamp", throwIfNotFound: true);
-        m_Movement_Interact = m_Movement.FindAction("Interact", throwIfNotFound: true);
+        m_Movement_Push = m_Movement.FindAction("Push", throwIfNotFound: true);
+        m_Movement_Pull = m_Movement.FindAction("Pull", throwIfNotFound: true);
         // Water
         m_Water = asset.FindActionMap("Water", throwIfNotFound: true);
         m_Water_Swim = m_Water.FindAction("Swim", throwIfNotFound: true);
@@ -369,7 +390,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Movement_Jump;
     private readonly InputAction m_Movement_Throw;
     private readonly InputAction m_Movement_ToggleLamp;
-    private readonly InputAction m_Movement_Interact;
+    private readonly InputAction m_Movement_Push;
+    private readonly InputAction m_Movement_Pull;
     public struct MovementActions
     {
         private @PlayerInputs m_Wrapper;
@@ -380,7 +402,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Movement_Jump;
         public InputAction @Throw => m_Wrapper.m_Movement_Throw;
         public InputAction @ToggleLamp => m_Wrapper.m_Movement_ToggleLamp;
-        public InputAction @Interact => m_Wrapper.m_Movement_Interact;
+        public InputAction @Push => m_Wrapper.m_Movement_Push;
+        public InputAction @Pull => m_Wrapper.m_Movement_Pull;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -408,9 +431,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @ToggleLamp.started += instance.OnToggleLamp;
             @ToggleLamp.performed += instance.OnToggleLamp;
             @ToggleLamp.canceled += instance.OnToggleLamp;
-            @Interact.started += instance.OnInteract;
-            @Interact.performed += instance.OnInteract;
-            @Interact.canceled += instance.OnInteract;
+            @Push.started += instance.OnPush;
+            @Push.performed += instance.OnPush;
+            @Push.canceled += instance.OnPush;
+            @Pull.started += instance.OnPull;
+            @Pull.performed += instance.OnPull;
+            @Pull.canceled += instance.OnPull;
         }
 
         private void UnregisterCallbacks(IMovementActions instance)
@@ -433,9 +459,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @ToggleLamp.started -= instance.OnToggleLamp;
             @ToggleLamp.performed -= instance.OnToggleLamp;
             @ToggleLamp.canceled -= instance.OnToggleLamp;
-            @Interact.started -= instance.OnInteract;
-            @Interact.performed -= instance.OnInteract;
-            @Interact.canceled -= instance.OnInteract;
+            @Push.started -= instance.OnPush;
+            @Push.performed -= instance.OnPush;
+            @Push.canceled -= instance.OnPush;
+            @Pull.started -= instance.OnPull;
+            @Pull.performed -= instance.OnPull;
+            @Pull.canceled -= instance.OnPull;
         }
 
         public void RemoveCallbacks(IMovementActions instance)
@@ -507,7 +536,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
         void OnToggleLamp(InputAction.CallbackContext context);
-        void OnInteract(InputAction.CallbackContext context);
+        void OnPush(InputAction.CallbackContext context);
+        void OnPull(InputAction.CallbackContext context);
     }
     public interface IWaterActions
     {

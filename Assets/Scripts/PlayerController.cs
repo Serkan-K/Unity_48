@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,26 +11,20 @@ public class PlayerController : MonoBehaviour
     [Header("Values")]
     [SerializeField] float walkSpeed = 5;
     [SerializeField] float runSpeed = 10;
-    //[SerializeField] float jumpForce = 5;
     [SerializeField] float sneakSpeed = 2;
     [SerializeField] float jumpHeight;
-    //[SerializeField] private Transform groundCheck;
     [Space(20)]
     [SerializeField] private GameObject newspaperPrefab;
     [SerializeField] private float throwForce = 10f;
     [SerializeField] private float throwHeightOffset = 1.5f;
+    [SerializeField] private LayerMask interactableLayer;
     [SerializeField] private float interactionRange = 2f;
+    [SerializeField] private Transform interactionPoint;
+    [SerializeField] private float pushForce = 10f;
+    [SerializeField] private float pullForce = 10f;
     [Space(3)]
     [Header("Swim")]
     [SerializeField] float swimSpeed = 3;
-    //[Tooltip("Kaldırma kuvveti")]
-    //[SerializeField] float buoyancyForce = 10f;
-    //[SerializeField] LayerMask waterLayer;
-    
-
-
-
-    //public float GetJumpForce() => jumpForce;
 
     public float GetWalkSpeed() => walkSpeed;
 
@@ -53,17 +47,15 @@ public class PlayerController : MonoBehaviour
     private PlayerInput playerInput;
     private InputActionAsset inputActions;
     [HideInInspector]
-    public InputAction moveAction, runAction, jumpAction, sneakAction, throwAction, toggleLampAction, interactAction, swimAction;
+    public InputAction moveAction, runAction, jumpAction, sneakAction, throwAction, toggleLampAction, pushAction, pullAction, swimAction;
     private Animator anim_;
     private Rigidbody rb;
     private StreetLampController currentStreetLamp;
-    private Rigidbody objectBeingMoved;
     private Vector2 move_Direction;
     private CapsuleCollider sneakCollider;
-    private Transform interactionPoint;
     private Transform throwPoint;
-    private LayerMask interactableLayer;
     private GroundCheck ground_control_;
+    private Rigidbody boxes;
 
     private float mapCode = 1;
 
@@ -74,20 +66,13 @@ public class PlayerController : MonoBehaviour
     public bool isRunning { get; set; }
     public bool isSneaking { get; set; } = false;
     public bool isGrounded { get; set; }
-    private bool isPulling {  get; set; }
     public bool isSwimming { get; set; } = false;
     public bool isFalling { get; set; }
+    public bool isPushing { get; set; }
+    public bool isPulling { get; set; }
+    
 
     #endregion
-
-
-
-
-
-
-
-
-
 
     #region Main
 
@@ -100,7 +85,6 @@ public class PlayerController : MonoBehaviour
         sneakCollider = GetComponent<CapsuleCollider>();
         ground_control_ = GetComponent<GroundCheck>();
 
-
         idleState = new IdleState(this);
         walkState = new WalkState(this);
         runState = new RunState(this);
@@ -108,25 +92,13 @@ public class PlayerController : MonoBehaviour
         jumpState = new JumpState(this);
         fallState = new FallState(this);
         swimState = new SwimState(this);
-
         stateMachine = new StateMachine();
-
-        interactionPoint = new GameObject("InteractionPoint").transform;
-        interactionPoint.SetParent(transform);
-        interactionPoint.localPosition = new Vector3(0, 0, 1.5f);
     }
 
 
 
     public Rigidbody GetRigidbody() => rb;
     public CapsuleCollider GetCollider() => sneakCollider;
-
-
-
-
-
-
-
 
     void Start()
     {
@@ -138,36 +110,30 @@ public class PlayerController : MonoBehaviour
         sneakAction = playerInput.actions.FindAction("Sneak");
         throwAction = playerInput.actions.FindAction("Throw");
         toggleLampAction = playerInput.actions.FindAction("ToggleLamp");
-        interactAction = playerInput.actions.FindAction("Interact");
+        pushAction = playerInput.actions.FindAction("Push");
+        pullAction = playerInput.actions.FindAction("Pull");
+
+
         playerInput.actions.FindActionMap("Water");
         swimAction = playerInput.actions.FindAction("Swim");
+
         SetInputActionMap("Movement");
-
-
 
         if (rb == null) { Debug.LogError("No Rigidbody component found on " + gameObject.name); }
         toggleLampAction.performed += ctx => ToggleNearestLamp();
 
+        interactionPoint = new GameObject("InteractionPoint").transform;
+        interactionPoint.SetParent(transform);
+        interactionPoint.localPosition = new Vector3(0, 0, 1.5f);
+
         stateMachine.ChangeState(idleState);
     }
-
-
-
     void Update()
     {
-
         stateMachine.Update();
-
-
-        if ((!isRunning && !isSneaking && !isSwimming) && objectBeingMoved != null)
-        {
-            if (moveAction.ReadValue<Vector2>().sqrMagnitude == 0)
-            {
-                anim_.SetBool("isPushing", false);
-                anim_.SetBool("isPulling", false);
-                objectBeingMoved = null;
-            }
-        }
+        PushPullObject();
+        UpdateThrowPoint();
+        HandleThrow();
     }
 
 
@@ -177,25 +143,9 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         HandleInput();
-       // Look();
         Ground_Control();
-        HandleInteraction();
-        UpdateThrowPoint();
-        HandleThrow();
     }
-
-
-
     #endregion
-
-
-
-
-
-
-
-
-
 
 
     #region Functions
@@ -204,6 +154,7 @@ public class PlayerController : MonoBehaviour
     {
         isRunning = runAction.ReadValue<float>() > 0;
         isSneaking = sneakAction.ReadValue<float>() > 0;
+
 
         if (isGrounded)
         {
@@ -219,8 +170,9 @@ public class PlayerController : MonoBehaviour
             {
                 stateMachine.ChangeState(jumpState);
             }
+            
         }
-      
+
         else if (isSwimming)
         {
             mapCode = 2;
@@ -232,6 +184,82 @@ public class PlayerController : MonoBehaviour
         {
             stateMachine.ChangeState(fallState);
         }
+
+        //bu kod blogu da sıkıntılı gıbı
+        
+    }
+    
+
+    public void PushPullObject()
+    {
+        isPushing = pushAction.ReadValue<float>() >0;
+        isPulling = pullAction.ReadValue<float>() >0 ;
+        if (!isPushing && !isPulling)
+        {
+            return;
+        }
+
+        Collider[] hitColliders = Physics.OverlapSphere(interactionPoint.position, interactionRange, interactableLayer);
+        if (hitColliders.Length > 0)
+        {
+           
+            if (boxes == null && isPushing == true)
+            {
+                boxes = hitColliders[0].GetComponent<Rigidbody>();
+                anim_.SetBool("isPushing", true);
+                MoveObject();
+            }
+            else if (boxes == null && isPulling == true)
+            {
+                boxes = hitColliders[0].GetComponent<Rigidbody>();
+                anim_.SetBool("isPulling", true);
+                MoveObject();
+            }
+            else if (boxes != null && isPushing == true)
+            {
+                anim_.SetBool("isPushing", true);
+                MoveObject();
+
+
+            }
+            else if (boxes != null && isPulling == true)
+            {
+
+                anim_.SetBool("isPulling", true);
+                MoveObject();
+
+            }
+            else if (boxes != null && isPulling == false && isPushing == false)
+            {
+                anim_.SetBool("isPushing", false);
+                anim_.SetBool("isPulling", false);
+                boxes = null;
+            }
+        }
+        boxes = null;
+       
+    }
+    private void MoveObject()
+    {
+
+        Vector3 direction = (interactionPoint.position - boxes.position).normalized;
+        float distance = Vector3.Distance(interactionPoint.position, boxes.position);
+        direction.y = 0;
+
+        if (distance > 0.5f)
+        {
+           boxes.MovePosition(boxes.position + direction * walkSpeed * Time.deltaTime);
+        }
+        else
+        {
+            boxes.velocity = Vector3.zero;
+        }
+        float maxSpeed = 2f;
+        if (boxes.velocity.magnitude > maxSpeed)
+        {
+            boxes.velocity = boxes.velocity.normalized * maxSpeed;
+        }
+
     }
 
 
@@ -248,7 +276,7 @@ public class PlayerController : MonoBehaviour
         if (isSwimming)
         {
             Vector2 directionSwim = swimAction.ReadValue<Vector2>();
-            Vector3 movementSwim = new Vector3(-directionSwim.x, 0, -directionSwim.y) * speed * Time.deltaTime;
+            Vector3 movementSwim = speed * Time.deltaTime * new Vector3(-directionSwim.x, 0, -directionSwim.y);
             rb.MovePosition(transform.position + movementSwim);
 
 
@@ -267,7 +295,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             Vector2 direction = moveAction.ReadValue<Vector2>();
-            Vector3 movement = new Vector3(-direction.x, 0, -direction.y) * speed * Time.deltaTime;
+            Vector3 movement = speed * Time.deltaTime * new Vector3(-direction.x, 0, -direction.y);
             rb.MovePosition(transform.position + movement);
 
             if (direction.sqrMagnitude > 0.1f)
@@ -288,7 +316,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-public Animator GetAnimator() { return anim_; }
+    public Animator GetAnimator() { return anim_; }
 
     public InputAction GetMoveAction() { return moveAction; }
 
@@ -399,144 +427,12 @@ public Animator GetAnimator() { return anim_; }
 
 
 
-
-
-
-
-
-
-
-
-
-    void HandleInteraction()
-    {
-        // Karakterin önündeyse pushla arkasındaysa pull ile çek
-        Collider[] hitColliders = Physics.OverlapSphere(interactionPoint.position, interactionRange, interactableLayer);
-        if (hitColliders.Length > 0)
-        {
-            if (objectBeingMoved == null && interactAction.ReadValue<float>() > 0)
-            {
-                objectBeingMoved = hitColliders[0].GetComponent<Rigidbody>();
-                if (objectBeingMoved != null)
-                {
-                    if (Vector3.Dot(transform.forward, (objectBeingMoved.position - transform.position).normalized) > 0)
-                    {
-                        isPulling = false;
-                        anim_.SetBool("isPushing", true);
-                    }
-                    else
-                    {
-                        isPulling = true;
-                        anim_.SetBool("isPulling", true);
-                    }
-                }
-            }
-        }
-        else if (objectBeingMoved != null && interactAction.ReadValue<float>() == 0)
-        {
-            anim_.SetBool("isPushing", false);
-            anim_.SetBool("isPulling", false);
-            objectBeingMoved = null;
-        }
-
-        if (objectBeingMoved != null && interactAction.ReadValue<float>() > 0)
-        {
-            MoveObject();
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    private void MoveObject()
-    {
-        if (objectBeingMoved == null) return;
-
-        Vector3 direction = (interactionPoint.position - objectBeingMoved.position).normalized;
-        float distance = Vector3.Distance(interactionPoint.position, objectBeingMoved.position);
-
-
-        direction.y = 0;
-
-        if (distance > 0.5f)
-        {
-            objectBeingMoved.MovePosition(objectBeingMoved.position + direction * walkSpeed * Time.deltaTime);
-        }
-        else
-        {
-            objectBeingMoved.velocity = Vector3.zero;
-        }
-
-
-        float maxSpeed = 5f;
-        if (objectBeingMoved.velocity.magnitude > maxSpeed)
-        {
-            objectBeingMoved.velocity = objectBeingMoved.velocity.normalized * maxSpeed;
-        }
-    }
-
-
-
-
-
-
-
-
     public void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-    //public void ApplyBuoyancy()
-    //{
-
-    //    Collider[] hitColliders = Physics.OverlapSphere(transform.position, .1f, waterLayer);
-    //    if (hitColliders.Length > 0)
-    //    {
-
-    //        rb.AddForce(Vector3.up * buoyancyForce, ForceMode.Acceleration);
-    //    }
-    //}
-
-
-
-
     #endregion
-
-
-
-
-
-
-
 
 
 
@@ -547,13 +443,12 @@ public Animator GetAnimator() { return anim_; }
     {
         if (ground_control_ == null)
         {
-            Debug.LogError("GroundCheck component not found!"); 
-            return;                                            
+            Debug.LogError("GroundCheck component not found!");
+            return;
         }
 
         if (ground_control_._walk)
         {
-            //Debug.Log("yürüdü");
             rb.drag = 0;
             isGrounded = true;
             isSwimming = false;
@@ -566,7 +461,6 @@ public Animator GetAnimator() { return anim_; }
         }
         else if (ground_control_._swim)
         {
-            //Debug.Log("yüzdü");
             isSwimming = true;
             isGrounded = false;
             isFalling = false;
@@ -578,7 +472,6 @@ public Animator GetAnimator() { return anim_; }
         }
         else
         {
-            //Debug.Log("düştü");
             rb.drag = 1;
             isFalling = true;
             isGrounded = false;

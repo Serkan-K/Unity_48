@@ -18,6 +18,7 @@ public class WalkState : IState
     {
         player.MovePlayer(player.GetWalkSpeed());
         player.HandleInput();
+        
 
         if (player.isRunning)
         {
@@ -35,6 +36,10 @@ public class WalkState : IState
         {
             player.stateMachine.ChangeState(player.idleState);
         }
+        
+
+        
+        //bu bloklarý düzenle
     }
 
     public void Exit()

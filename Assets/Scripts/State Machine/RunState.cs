@@ -11,6 +11,7 @@ public class RunState : IState
 
     public void Enter()
     {
+        
         player.GetAnimator().SetBool("isRunning", true);
     }
 
@@ -21,11 +22,6 @@ public class RunState : IState
         player.CheckMap();
 
 
-
-        if(player.jumpAction.triggered && player.isGrounded)
-        {
-            player.stateMachine.ChangeState(player.jumpState);
-        }
 
 
         if (!player.isRunning)
@@ -47,10 +43,12 @@ public class RunState : IState
                 player.stateMachine.ChangeState(player.walkState);
             }
         }
+
     }
 
     public void Exit()
     {
+        //player.GetAnimator().SetBool("isRunJump", false);
         player.GetAnimator().SetBool("isRunning", false);
     }
 }
