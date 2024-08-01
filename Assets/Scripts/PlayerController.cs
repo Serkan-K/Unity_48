@@ -8,15 +8,19 @@ public class PlayerController : MonoBehaviour
 {
 
     #region Serialize
-    [Header("Values")]
+    [Header("Değerler")]
     [SerializeField] float walkSpeed = 5;
     [SerializeField] float runSpeed = 10;
     [SerializeField] float sneakSpeed = 2;
     [SerializeField] float jumpHeight;
-    [Space(20)]
+    [Space(10)]
+    [Header("Gazete")]
     [SerializeField] private GameObject newspaperPrefab;
+    [SerializeField] private Transform throwPoint;
     [SerializeField] private float throwForce = 10f;
     [SerializeField] private float throwHeightOffset = 1.5f;
+    [Space(10)]
+    [Header("İtme")]
     [SerializeField] private LayerMask interactableLayer;
     [SerializeField] private float interactionRange = 2f;
     [SerializeField] private Transform interactionPoint;
@@ -53,7 +57,6 @@ public class PlayerController : MonoBehaviour
     private StreetLampController currentStreetLamp;
     private Vector2 move_Direction;
     private CapsuleCollider sneakCollider;
-    private Transform throwPoint;
     private GroundCheck ground_control_;
     private Rigidbody boxes;
 
@@ -70,7 +73,7 @@ public class PlayerController : MonoBehaviour
     public bool isFalling { get; set; }
     public bool isPushing { get; set; }
     public bool isPulling { get; set; }
-    
+
 
     #endregion
 
@@ -170,7 +173,7 @@ public class PlayerController : MonoBehaviour
             {
                 stateMachine.ChangeState(jumpState);
             }
-            
+
         }
 
         else if (isSwimming)
@@ -185,15 +188,13 @@ public class PlayerController : MonoBehaviour
             stateMachine.ChangeState(fallState);
         }
 
-        //bu kod blogu da sıkıntılı gıbı
-        
     }
-    
+
 
     public void PushPullObject()
     {
-        isPushing = pushAction.ReadValue<float>() >0;
-        isPulling = pullAction.ReadValue<float>() >0 ;
+        isPushing = pushAction.ReadValue<float>() > 0;
+        isPulling = pullAction.ReadValue<float>() > 0;
         if (!isPushing && !isPulling)
         {
             return;
@@ -202,7 +203,7 @@ public class PlayerController : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(interactionPoint.position, interactionRange, interactableLayer);
         if (hitColliders.Length > 0)
         {
-           
+
             if (boxes == null && isPushing == true)
             {
                 boxes = hitColliders[0].GetComponent<Rigidbody>();
@@ -237,7 +238,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         boxes = null;
-       
+
     }
     private void MoveObject()
     {
@@ -248,7 +249,7 @@ public class PlayerController : MonoBehaviour
 
         if (distance > 0.5f)
         {
-           boxes.MovePosition(boxes.position + direction * walkSpeed * Time.deltaTime);
+            boxes.MovePosition(boxes.position + direction * walkSpeed * Time.deltaTime);
         }
         else
         {
@@ -350,24 +351,26 @@ public class PlayerController : MonoBehaviour
 
     void HandleThrow()
     {
-        if (throwAction.triggered && newspaperPrefab != null && throwPoint != null)
+        if (throwAction.triggered && throwPoint != null)
         {
-            GameObject newspaper = Instantiate(newspaperPrefab, throwPoint.position, throwPoint.rotation);
-            Rigidbody newspaperRb = newspaper.GetComponent<Rigidbody>();
-            if (newspaperRb != null)
+            GameObject newspaper = Object_Pooler.Instance.GetPooledObject();
+
+            if (newspaper != null)
             {
-                newspaperRb.AddForce(throwPoint.forward * throwForce, ForceMode.Impulse);
+                newspaper.transform.position = throwPoint.position;
+                newspaper.transform.rotation = throwPoint.rotation;
+                newspaper.SetActive(true);
+
+                Rigidbody newspaperRb = newspaper.GetComponent<Rigidbody>();
+
+                if (newspaperRb != null)
+                {
+                    newspaperRb.AddForce(throwPoint.forward * throwForce, ForceMode.Impulse);
+                }
             }
+            else { Debug.LogWarning("No pooled objects available!"); }
         }
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -379,7 +382,7 @@ public class PlayerController : MonoBehaviour
     {
         if (throwPoint != null)
         {
-            throwPoint.position = transform.position + transform.forward * 1f + Vector3.up * throwHeightOffset;
+            throwPoint.position = transform.position + 1f * throwHeightOffset * transform.forward + Vector3.up;
             throwPoint.rotation = transform.rotation;
         }
     }
