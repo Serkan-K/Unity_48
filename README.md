@@ -67,7 +67,7 @@ _Lost Light, Viktorya dönemi Londra'sının karanlık sokaklarında geçen, duy
 
 ### Puanlama
 
-Proje boyunca toplam **145** puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünen projede ilk sprint için **37** puanlık kısmının tamamlanması planlanmıştır. Tüm hedefler gerçekleştiği için de **37** puanın tamamı toplanmıştır.
+Proje boyunca toplam **158** puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünen projede ilk sprint için **37** puanlık kısmının tamamlanması planlanmıştır. Tüm hedefler gerçekleştiği için de **37** puanın tamamı toplanmıştır.
 
 ### Puan Tamamlama Mantığı
 
@@ -161,7 +161,7 @@ Puanlar, her bir görevin karmaşıklığı ve tahmini tamamlanma süresine gör
 
 ### Puanlama
 
-Proje boyunca toplam **145** puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünen projede ikinci sprint için **63** puanlık kısmının tamamlanması planlanmıştır. Tüm hedefler gerçekleştiği için de **63** puanın tamamı toplanmıştır.
+Proje boyunca toplam **158** puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünen projede ikinci sprint için **63** puanlık kısmının tamamlanması planlanmıştır. Tüm hedefler gerçekleştiği için de **63** puanın tamamı toplanmıştır.
 
 ### Puan Tamamlama Mantığı
 
@@ -243,17 +243,92 @@ Puanlar, ilk sprintte olduğu gibi her bir görevin karmaşıklığı ve tahmini
 
 ### Sprint Hedefi
 
-[Sprint 3 için Belirlenen Hedefler]
+Üçüncü sprint sonunda, AI sistemi ve tüm bölümlerinin bir araya getirilerek oyun videosunun yapılması hedefleniyor.
 
 ### Sprint Notları (Sprint Backlog)
 
-[Sprint 3 için Belirlenen Görevler]
+  - AI mekaniği hazırlandı
+  - Menü tasarımları hazırlandı
+  - Kanalizasyon bölümü tamamlandı
+  - Proje bir araya getirilerek oyun videosu hazırlandı
 
-[Sprint 3 Raporunun Devamı - Puanlama, Daily Scrum, Sprint Board, Ekran Görüntüleri, Review, Retrospective]
+### Puanlama
+
+Proje boyunca toplam **158** puan toplanması gereken backlog bulunmaktadır. Üç sprinte bölünen projede son sprint için **58** puanlık kısmının tamamlanması planlanmıştır. Tüm hedefler gerçekleştiği için de **58** puanın tamamı toplanmıştır.
+
+### Puan Tamamlama Mantığı
+
+Puanlar, ilk sprintlerde olduğu gibi her bir görevin karmaşıklığı ve tahmini tamamlanma süresine göre belirlenmiştir.
+
+- - - -
+### Backlog Düzeni
+
+  #### Daily Scrum
+
+<details>
+<summary>Daily Scrum Görüntüleri</summary>
+  
+![daily scrum_2](https://github.com/user-attachments/assets/cca386db-b491-428d-8533-e9d5bcc2b522)
+
 
 </details>
 
+- - - -
+### Sprint Board Güncellemesi
+
+<details>
+<summary>Sprint Board Ekran Görüntüsü</summary>
+
+
+![Sprint 2 list ](https://github.com/user-attachments/assets/6f1251fc-9188-4c4b-b1fe-899ff0444e1d)
+
+
+</details>
+
+
+### Oyunda Yapılan İşler
+
+<details>
+<summary>Oyun İçi Görüntüler</summary>
+
+#### Unity
+![Sprint 2](https://github.com/user-attachments/assets/7e5176ef-492c-4d49-871c-bba0bde34b71)
+
+</details>
+
+<details><summary>Modeller</summary>
+  
+![blend ](https://github.com/user-attachments/assets/b3f1a6e0-9854-4e4f-b775-cf25870c8d1b)
+![blend 2](https://github.com/user-attachments/assets/fe628297-321b-4220-b842-4379bc7b67a3)
+</details>
+
+
+### Sprint Review
+
+  - Üçüncü sprint hedeflerinin tamamı başarıyla tamamlanmıştır.
+  - Barracuda ile AI sistemi hazırlandı
+  - Oyunun geçeceği bölümler birleştirilerek proje tamamlandı
+  - Oyunun geleceği için oyunu geliştirilmeye devam edilip çeşitli programlara başvurulması kararlaştırıldı
+
+
+![Burndown ](https://github.com/user-attachments/assets/a01433cf-7165-4385-9eba-58338dceccfe)
+
+
+
+### Sprint Retrospective
+
+- **Olumlu:** Görevler tamamlanarak proje oynanabilir hâle getirildi.
+- **Geliştirilecek:** Birkaç görevde oluşan sorunlar daha hızlı toparlanacak.
+- **Aksiyon:** Projenin geliştirilmesine devam edilip TEKNOFEST, GirVak ve teknokentler gibi çeşitli programlara başvurulacaktır.
+
 ----
+
+#### Günlük görev takvimi
+![Sprint calendar](https://github.com/Serkan-K/Unity_48/assets/125659165/df0e8d14-e8de-4e34-a7d1-3d60b3e1f8e1)
+
+
+</details>
+
 
 # Proje
 
