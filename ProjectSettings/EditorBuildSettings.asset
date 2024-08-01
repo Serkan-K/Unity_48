@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/0_Main Menu.unity
     guid: 4f91b93ec47a00748b251ff360f8f051
   - enabled: 1
-    path: Assets/Scenes/1_Londra.unity
+    path: Assets/Scenes/1_London.unity
     guid: b9d57666d67908843bf0f0394181d667
   m_configObjects: {}
