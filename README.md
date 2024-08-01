@@ -280,7 +280,7 @@ Puanlar, ilk sprintlerde olduğu gibi her bir görevin karmaşıklığı ve tahm
 <summary>Sprint Board Ekran Görüntüsü</summary>
 
 
-![Sprint 2 list ](https://github.com/user-attachments/assets/6f1251fc-9188-4c4b-b1fe-899ff0444e1d)
+![Sprint Backlog ](https://github.com/user-attachments/assets/d1ab2dd9-892b-4818-af85-0caa19ae5692)
 
 
 </details>
@@ -298,8 +298,8 @@ Puanlar, ilk sprintlerde olduğu gibi her bir görevin karmaşıklığı ve tahm
 
 <details><summary>Modeller</summary>
   
-![blend ](https://github.com/user-attachments/assets/b3f1a6e0-9854-4e4f-b775-cf25870c8d1b)
-![blend 2](https://github.com/user-attachments/assets/fe628297-321b-4220-b842-4379bc7b67a3)
+![Blender ](https://github.com/user-attachments/assets/6430e724-253c-4849-a712-a821010b17ce)
+
 </details>
 
 
