@@ -268,7 +268,7 @@ Puanlar, ilk sprintlerde olduğu gibi her bir görevin karmaşıklığı ve tahm
 <details>
 <summary>Daily Scrum Görüntüleri</summary>
   
-![daily scrum_2](https://github.com/user-attachments/assets/cca386db-b491-428d-8533-e9d5bcc2b522)
+![Daily Scrum](https://github.com/user-attachments/assets/d40a2d22-20c9-4dd5-9365-cd1fdec3a5b7)
 
 
 </details>
@@ -325,7 +325,7 @@ Puanlar, ilk sprintlerde olduğu gibi her bir görevin karmaşıklığı ve tahm
 ----
 
 #### Günlük görev takvimi
-![Sprint calendar](https://github.com/Serkan-K/Unity_48/assets/125659165/df0e8d14-e8de-4e34-a7d1-3d60b3e1f8e1)
+![Calendar ](https://github.com/user-attachments/assets/a5ac29de-34f2-4ae1-964c-38cc8d4cca34)
 
 
 </details>
@@ -336,7 +336,7 @@ Puanlar, ilk sprintlerde olduğu gibi her bir görevin karmaşıklığı ve tahm
 <details>
 <summary>Jira Dashboard</summary>
 
-[Jira Dashboard Ekran Görüntüsü]
+[[Jira Dashboard Ekran Görüntüsü]](https://unity-48.atlassian.net/jira/software/projects/UNI48/list?groupBy=status&sortBy=customfield_10020&direction=DESC&atlOrigin=eyJpIjoiNDBlMjE0NTQyYTVmNGRlZDg2ZmYwYTUxNzI0YjIxMWUiLCJwIjoiaiJ9)
 
 </details>
 
