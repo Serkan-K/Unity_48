@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "com.blendernodesgraph.core": {
-      "version": "file:C:/Users/bilim/OneDrive/Masaüstü/blender-nodes-subgraph-main",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {}
-    },
     "com.unity.ai.navigation": {
       "version": "1.1.5",
       "depth": 0,

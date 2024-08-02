@@ -6,27 +6,18 @@ using UnityEngine;
 public class DrawOnTexture : MonoBehaviour
 {
     public Texture2D baseTexture;
-    public Color clearColor = Color.black; // Temizleme rengi (siyah)
+    public Color clearColor = Color.black;
 
-    // Update is called once per frame
-    void Update()
-    {
-        DoMouseDrawing();
-    }
 
-    /// <summary>
-    /// Allows drawing to the texture with a mouse
-    /// </summary>
+    void Update() { DoMouseDrawing(); }
+
+
     /// <exception cref="Exception"></exception>
     private void DoMouseDrawing()
     {
-        // Don't bother trying to run if we can't find the main camera.
-        if (Camera.main == null)
-        {
-            throw new Exception("Cannot find main camera");
-        }
 
-        // Is the mouse being pressed?
+        if (Camera.main == null) { throw new Exception("Camera yok"); }
+
         if (!Input.GetMouseButton(0) && !Input.GetMouseButton(1)) return;
 
         if (Input.GetMouseButton(1))
