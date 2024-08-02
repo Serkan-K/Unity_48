@@ -1,8 +1,7 @@
 using System.Collections;
 using UnityEngine;
-using UnityEditor;
 using DG.Tweening;
-using System.Linq;
+
 
 public class Tutorial_ : MonoBehaviour
 {
@@ -15,7 +14,6 @@ public class Tutorial_ : MonoBehaviour
     [SerializeField] private float activateTime = 2f;
     [SerializeField] private float deactivateTime = 5f;
     [SerializeField] private float fadeDuration = 0.5f;
-    //[SerializeField] private bool UI = false;
 
 
     private bool IS_coroutine = false;
@@ -38,13 +36,11 @@ public class Tutorial_ : MonoBehaviour
 
     private IEnumerator UITutorial()
     {
-        //Debug.Log("sýfýrladý");
         canvasGroup.alpha = 0;
 
         yield return new WaitForSeconds(activateTime);
 
         uiObject.SetActive(true);
-        //Debug.Log("aktif");
 
         canvasGroup.DOFade(1, fadeDuration);
 
@@ -52,10 +48,8 @@ public class Tutorial_ : MonoBehaviour
 
 
         canvasGroup.DOFade(0, fadeDuration).OnComplete(() => uiObject.SetActive(false));
-        //Debug.Log("deaktif");
-        //UI = 
+
         IS_coroutine = false;
-        //Debug.Log("UI kapandý");
 
     }
 
