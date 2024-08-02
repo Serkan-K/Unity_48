@@ -291,10 +291,6 @@ Puanlar, ilk sprintlerde olduğu gibi her bir görevin karmaşıklığı ve tahm
 <details>
 <summary>Oyun İçi Görüntüler</summary>
 
-#### Unity
-![Sprint 2](https://github.com/user-attachments/assets/7e5176ef-492c-4d49-871c-bba0bde34b71)
-
-</details>
 
 <details><summary>Modeller</summary>
   
