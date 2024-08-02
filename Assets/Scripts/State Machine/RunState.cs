@@ -37,7 +37,7 @@ public class RunState : IState
             {
                 player.stateMachine.ChangeState(player.runJumpState);
             }
-            else if (player.GetMoveAction().ReadValue<Vector2>() == Vector2.zero)
+            else if (player.isGrounded && player.GetMoveAction().ReadValue<Vector2>() == Vector2.zero )
             {
                 player.stateMachine.ChangeState(player.idleState);
             }
@@ -45,7 +45,7 @@ public class RunState : IState
             {
                 player.stateMachine.ChangeState(player.swimState);
             }
-            else
+            else if (player.isGrounded && player.GetMoveAction().ReadValue<Vector2>() != Vector2.zero)
             {
                 player.stateMachine.ChangeState(player.walkState);
             }

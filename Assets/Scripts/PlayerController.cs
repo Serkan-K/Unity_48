@@ -143,7 +143,14 @@ public class PlayerController : MonoBehaviour
 
     public void HandleInput()
     {
+        isRunning = runAction.ReadValue<float>() > 0;
+        isSneaking = sneakAction.ReadValue<float>() > 0;
+
         if (jumpAction.triggered && moveAction.ReadValue<Vector2>() != Vector2.zero)
+        {
+            isRunJump = true;
+        }
+        else if (jumpAction.triggered && isRunning )
         {
             isRunJump = true;
         }
@@ -152,8 +159,7 @@ public class PlayerController : MonoBehaviour
             isRunJump = false;
         }
 
-        isRunning = runAction.ReadValue<float>() > 0;
-        isSneaking = sneakAction.ReadValue<float>() > 0;
+        
         //isRunJump = jumpAction.ReadValue<float>() > 0;
 
 
