@@ -3,8 +3,6 @@ using UnityEngine;
 public class FallState : IState
 {
     private PlayerController player;
-    //private float y_vel;
-
     public FallState(PlayerController player)
     {
         this.player = player;

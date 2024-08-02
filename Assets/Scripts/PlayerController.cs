@@ -14,19 +14,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float sneakSpeed = 2;
     [SerializeField] float jumpHeight;
     [Space(10)]
+
     [Header("Gazete")]
     [SerializeField] private GameObject newspaperPrefab;
     [SerializeField] private Transform throwPoint;
     [SerializeField] private float throwForce = 10f;
     [SerializeField] private float throwHeightOffset = 1.5f;
     [Space(10)]
-    [Header("İtme")]
+
+    [Header("Kutu İtme")]
     [SerializeField] private LayerMask interactableLayer;
     [SerializeField] private float interactionRange = 2f;
     [SerializeField] private Transform interactionPoint;
-    [SerializeField] private float pushForce = 10f;
-    [SerializeField] private float pullForce = 10f;
     [Space(3)]
+
     [Header("Swim")]
     [SerializeField] float swimSpeed = 3;
 
@@ -42,11 +43,6 @@ public class PlayerController : MonoBehaviour
     #endregion
 
 
-
-
-
-
-
     #region Variables
     private PlayerInput playerInput;
     private InputActionAsset inputActions;
@@ -55,7 +51,6 @@ public class PlayerController : MonoBehaviour
     private Animator anim_;
     private Rigidbody rb;
     private StreetLampController currentStreetLamp;
-    private Vector2 move_Direction;
     private CapsuleCollider sneakCollider;
     private GroundCheck ground_control_;
     private Rigidbody boxes;
@@ -64,7 +59,8 @@ public class PlayerController : MonoBehaviour
 
 
     public StateMachine stateMachine { get; private set; }
-    public IState idleState, walkState, runState, sneakState, jumpState, fallState, swimState;
+
+    public IState idleState, walkState, runState, sneakState, jumpState, fallState, swimState,runJumpState;
 
     public bool isRunning { get; set; }
     public bool isSneaking { get; set; } = false;
@@ -73,6 +69,7 @@ public class PlayerController : MonoBehaviour
     public bool isFalling { get; set; }
     public bool isPushing { get; set; }
     public bool isPulling { get; set; }
+    public bool isRunJump { get; set; }
 
 
     #endregion
@@ -95,18 +92,15 @@ public class PlayerController : MonoBehaviour
         jumpState = new JumpState(this);
         fallState = new FallState(this);
         swimState = new SwimState(this);
+        runJumpState = new RunJumpState(this);
         stateMachine = new StateMachine();
     }
-
-
-
     public Rigidbody GetRigidbody() => rb;
     public CapsuleCollider GetCollider() => sneakCollider;
 
     void Start()
     {
         inputActions = playerInput.actions;
-
         moveAction = playerInput.actions.FindAction("Move");
         runAction = playerInput.actions.FindAction("Run");
         jumpAction = playerInput.actions.FindAction("Jump");
@@ -115,7 +109,6 @@ public class PlayerController : MonoBehaviour
         toggleLampAction = playerInput.actions.FindAction("ToggleLamp");
         pushAction = playerInput.actions.FindAction("Push");
         pullAction = playerInput.actions.FindAction("Pull");
-
 
         playerInput.actions.FindActionMap("Water");
         swimAction = playerInput.actions.FindAction("Swim");
@@ -138,11 +131,6 @@ public class PlayerController : MonoBehaviour
         UpdateThrowPoint();
         HandleThrow();
     }
-
-
-
-
-
     private void FixedUpdate()
     {
         HandleInput();
@@ -155,8 +143,24 @@ public class PlayerController : MonoBehaviour
 
     public void HandleInput()
     {
+        if (jumpAction.triggered && moveAction.ReadValue<Vector2>() != Vector2.zero)
+        {
+            isRunJump = true;
+        }
+        else
+        {
+            isRunJump = false;
+        }
+
         isRunning = runAction.ReadValue<float>() > 0;
         isSneaking = sneakAction.ReadValue<float>() > 0;
+        //isRunJump = jumpAction.ReadValue<float>() > 0;
+
+
+        if (isRunJump)
+        {
+            stateMachine.ChangeState(runJumpState);
+        }
 
 
         if (isGrounded)
@@ -169,7 +173,7 @@ public class PlayerController : MonoBehaviour
             {
                 isRunning = false;
             }
-            else if (jumpAction.triggered && isGrounded)
+            else if (jumpAction.triggered && moveAction.ReadValue<Vector2>() == Vector2.zero)
             {
                 stateMachine.ChangeState(jumpState);
             }
@@ -187,7 +191,6 @@ public class PlayerController : MonoBehaviour
         {
             stateMachine.ChangeState(fallState);
         }
-
     }
 
 
@@ -195,6 +198,7 @@ public class PlayerController : MonoBehaviour
     {
         isPushing = pushAction.ReadValue<float>() > 0;
         isPulling = pullAction.ReadValue<float>() > 0;
+
         if (!isPushing && !isPulling)
         {
             return;
@@ -262,16 +266,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
-
-
-
-
-
-
-
-
-
     public void MovePlayer(float speed)
     {
         if (isSwimming)
@@ -313,42 +307,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
-
-
-
     public Animator GetAnimator() { return anim_; }
-
     public InputAction GetMoveAction() { return moveAction; }
-
-
     public void SetInputActionMap(string actionMapName)
     {
         playerInput.SwitchCurrentActionMap(actionMapName);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     void HandleThrow()
     {
         if (throwAction.triggered && throwPoint != null)
@@ -371,13 +335,6 @@ public class PlayerController : MonoBehaviour
             else { Debug.LogWarning("No pooled objects available!"); }
         }
     }
-
-
-
-
-
-
-
     void UpdateThrowPoint()
     {
         if (throwPoint != null)
@@ -386,20 +343,6 @@ public class PlayerController : MonoBehaviour
             throwPoint.rotation = transform.rotation;
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     void ToggleNearestLamp()
     {
@@ -423,13 +366,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-
-
-
-
-
-
     public void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
@@ -437,10 +373,7 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-
-
     #region Misc
-
 
     private void Ground_Control()
     {
@@ -481,15 +414,6 @@ public class PlayerController : MonoBehaviour
             isSwimming = false;
         }
     }
-
-
-
-
-
-
-
-
-
     void OnTriggerEnter(Collider other)
     {
 
@@ -508,16 +432,7 @@ public class PlayerController : MonoBehaviour
             currentStreetLamp = null;
         }
     }
-
-
-
-
-
-
-
-
     public float GetMap() => mapCode;
-
     public void CheckMap()
     {
         if (GetMap() == 2)
@@ -527,13 +442,4 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
-
-
-
-
-
-
 }
-
-
-

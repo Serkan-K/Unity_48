@@ -13,12 +13,17 @@ public class WalkState : IState
     {
         player.GetAnimator().SetBool("isWalking", true);
     }
-
     public void Execute()
     {
         player.MovePlayer(player.GetWalkSpeed());
         player.HandleInput();
-        
+
+
+        if (player.isRunJump)
+        {
+            player.stateMachine.ChangeState(player.runJumpState);
+        }
+
 
         if (player.isRunning)
         {
@@ -32,14 +37,14 @@ public class WalkState : IState
         {
             player.stateMachine.ChangeState(player.swimState);
         }
+        else if (player.isRunJump)
+        {
+            player.stateMachine.ChangeState(player.runJumpState);
+        }
         else if (player.GetMoveAction().ReadValue<Vector2>() == Vector2.zero)
         {
             player.stateMachine.ChangeState(player.idleState);
         }
-        
-
-        
-        //bu bloklarý düzenle
     }
 
     public void Exit()

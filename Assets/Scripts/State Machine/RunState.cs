@@ -22,13 +22,20 @@ public class RunState : IState
         player.CheckMap();
 
 
-
+        if (player.isRunJump)
+        {
+            player.stateMachine.ChangeState(player.runJumpState);
+        }
 
         if (!player.isRunning)
         {
             if (player.isSneaking)
             {
                 player.stateMachine.ChangeState(player.sneakState);
+            }
+            else if (player.isRunJump)
+            {
+                player.stateMachine.ChangeState(player.runJumpState);
             }
             else if (player.GetMoveAction().ReadValue<Vector2>() == Vector2.zero)
             {
@@ -48,7 +55,6 @@ public class RunState : IState
 
     public void Exit()
     {
-        //player.GetAnimator().SetBool("isRunJump", false);
         player.GetAnimator().SetBool("isRunning", false);
     }
 }

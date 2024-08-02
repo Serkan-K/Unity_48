@@ -21,7 +21,7 @@ public class StateMachine
         }
         currentState = newState;
         currentState.Enter();
-
+        //Debug.Log(currentState);
     }
 
     public void Update()

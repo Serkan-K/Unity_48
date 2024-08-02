@@ -22,6 +22,7 @@ public class SneakState : IState
         player.MovePlayer(player.GetSneakSpeed());
         player.HandleInput();
         player.CheckMap();
+
         if (!player.isSneaking)
         {
             if (player.isRunning)

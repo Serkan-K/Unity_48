@@ -12,7 +12,6 @@ public class JumpState : IState
     public void Enter()
     {
         player.GetAnimator().SetBool("isJumping", true);
-        //player.GetRigidbody().AddForce(Vector3.up * player.GetJumpForce(), ForceMode.Impulse);
         player.Jump();
     }
 
@@ -20,7 +19,6 @@ public class JumpState : IState
     {
         player.CheckMap();
         player.HandleInput();
-        player.MovePlayer(player.GetWalkSpeed());
 
         if (player.isGrounded)
         {
@@ -36,6 +34,5 @@ public class JumpState : IState
     public void Exit()
     {
         player.GetAnimator().SetBool("isJumping", false);
-        player.GetAnimator().SetBool("isFalling", true);
     }
 }

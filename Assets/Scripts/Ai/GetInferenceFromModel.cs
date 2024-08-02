@@ -7,31 +7,30 @@ using UnityEngine;
 
 public class GetInferenceFromModel : MonoBehaviour
 {
-
     public Texture2D texture;
-
     public NNModel modelAsset;
-
     private Model _runtimeModel;
-
     private IWorker _engine;
 
-    /// <summary>
-    /// A struct used for holding the results of our prediction in a way that's easy for us to view from the inspector.
-    /// </summary>
+    [Space(10)]
+    [SerializeField] private GameObject player_;
+
+
+
+
+
     [Serializable]
     public struct Prediction
     {
-        // The most likely value for this prediction
+
         public int predictedValue;
-        // The list of likelihoods for all the possible classes
         public float[] predicted;
 
         public void SetPrediction(Tensor t)
         {
-            // Extract the float value outputs into the predicted array.
+
             predicted = t.AsFloats();
-            // The most likely one is the predicted value.
+
             predictedValue = Array.IndexOf(predicted, predicted.Max());
             Debug.Log($"Predicted {predictedValue}");
         }
@@ -39,39 +38,51 @@ public class GetInferenceFromModel : MonoBehaviour
 
     public Prediction prediction;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        // Set up the runtime model and worker.
+
         _runtimeModel = ModelLoader.Load(modelAsset);
         _engine = WorkerFactory.CreateWorker(_runtimeModel, WorkerFactory.Device.GPU);
-        // Instantiate our prediction struct.
+
         prediction = new Prediction();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            // making a tensor out of a grayscale texture
-            var channelCount = 1; //grayscale, 3 = color, 4 = color+alpha
-            // Create a tensor for input from the texture.
+
+            var channelCount = 1;
             var inputX = new Tensor(texture, channelCount);
 
-            // Peek at the output tensor without copying it.
+
             Tensor outputY = _engine.Execute(inputX).PeekOutput();
-            // Set the values of our prediction struct using our output tensor.
             prediction.SetPrediction(outputY);
 
-            // Dispose of the input tensor manually (not garbage-collected).
+
             inputX.Dispose();
+
+            if(prediction.predictedValue == 4)
+            {
+                Debug.Log("doðru cevap ");
+                Gate_Open();
+            }
+            else { Debug.Log(" hatalý cevap "); }
+
         }
     }
 
-    private void OnDestroy()
+
+    private void Gate_Open()
     {
-        // Dispose of the engine manually (not garbage-collected).
-        _engine?.Dispose();
+        Vector3 newPos = player_.transform.position;
+        newPos.x = -625;
+
+        player_.transform.position = newPos;
     }
+
+
+    private void OnDestroy() { _engine?.Dispose(); }
 }

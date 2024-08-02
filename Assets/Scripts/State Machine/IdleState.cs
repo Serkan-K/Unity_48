@@ -19,6 +19,7 @@ public class IdleState : IState
         player.GetAnimator().SetBool("isSwimming", false);
         player.GetAnimator().SetBool("isPulling", false);
         player.GetAnimator().SetBool("isPushing", false);
+        //player.GetAnimator().SetBool("isRunJump", false);
 
     }
     public void CheckMap()
@@ -36,7 +37,6 @@ public class IdleState : IState
         Vector2 moveInput = player.GetMoveAction().ReadValue<Vector2>();
         if (moveInput != Vector2.zero)
         {
-
             if (player.isRunning)
             {
                 player.stateMachine.ChangeState(player.runState);
@@ -45,16 +45,19 @@ public class IdleState : IState
             {
                 player.stateMachine.ChangeState(player.sneakState);
             }
+            else if (player.jumpAction.triggered && player.isGrounded)
+            {
+                player.stateMachine.ChangeState(player.runJumpState);
+
+            }
             else
             {
-                //CheckMap();
                 player.stateMachine.ChangeState(player.walkState);
             }
             if (player.isSwimming)
             {
                 player.stateMachine.ChangeState(player.swimState);
             }
-            // bu nasýl kod
         }
     }
 
