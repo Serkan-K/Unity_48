@@ -326,26 +326,3 @@ Puanlar, ilk sprintlerde olduğu gibi her bir görevin karmaşıklığı ve tahm
 
 </details>
 
-
-# Proje
-
-<details>
-<summary>Jira Dashboard</summary>
-
-[[Jira Dashboard Ekran Görüntüsü]](https://unity-48.atlassian.net/jira/software/projects/UNI48/list?groupBy=status&sortBy=customfield_10020&direction=DESC&atlOrigin=eyJpIjoiNDBlMjE0NTQyYTVmNGRlZDg2ZmYwYTUxNzI0YjIxMWUiLCJwIjoiaiJ9)
-
-</details>
-
-<details>
-<summary>3D Modeller</summary>
-
-[3D Model Ekran Görüntüleri]
-
-</details>
-
-<details>
-<summary>Toplantı Ekran Görüntüleri</summary>
-
-[Toplantı Ekran Görüntüleri]
-
-</details>
