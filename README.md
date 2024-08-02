@@ -1,4 +1,4 @@
-![title](https://github.com/Serkan-K/Unity_48/assets/125659165/de1c83ce-f56a-40de-af70-1034916785ba)
+![Lost Light Logo aa](https://github.com/user-attachments/assets/59744f1a-5ae7-4349-85f2-77460f015f62)
 
 # [![Typing SVG](https://readme-typing-svg.demolab.com?font=&size=30&duration=1000&pause=3000&color=FFFFFF&center=true&vCenter=true&random=false&width=150&lines=+Unity+48)](https://git.io/typing-svg)
 
