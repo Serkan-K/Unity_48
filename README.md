@@ -298,6 +298,7 @@ Puanlar, ilk sprintlerde olduğu gibi her bir görevin karmaşıklığı ve tahm
 ![Blender  2](https://github.com/user-attachments/assets/830192e3-10be-4b99-a9e4-cd19cedf8bc6)
 
 </details>
+</details>
 
 
 ### Sprint Review
@@ -323,6 +324,6 @@ Puanlar, ilk sprintlerde olduğu gibi her bir görevin karmaşıklığı ve tahm
 #### Günlük görev takvimi
 ![Calendar ](https://github.com/user-attachments/assets/a5ac29de-34f2-4ae1-964c-38cc8d4cca34)
 
-
+---
 </details>
 
