@@ -299,6 +299,7 @@ Puanlar, ilk sprintlerde olduğu gibi her bir görevin karmaşıklığı ve tahm
 <details><summary>Modeller</summary>
   
 ![Blender ](https://github.com/user-attachments/assets/6430e724-253c-4849-a712-a821010b17ce)
+![Blender  2](https://github.com/user-attachments/assets/830192e3-10be-4b99-a9e4-cd19cedf8bc6)
 
 </details>
 
