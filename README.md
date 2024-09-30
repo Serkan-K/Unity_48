@@ -326,3 +326,8 @@ Puanlar, ilk sprintlerde olduğu gibi her bir görevin karmaşıklığı ve tahm
 ---
 </details>
 
+# Proje
+[Gameplay Trailer](https://www.youtube.com/watch?v=qCGxwrhOTzE)
+
+[Game (UnityPlay)](https://play.unity.com/en/games/19681bd0-db5d-4943-ae80-cef628fe7cf2/lost-light)
+
