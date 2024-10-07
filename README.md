@@ -36,7 +36,7 @@ _Lost Light, Viktorya dönemi Londra'sının karanlık sokaklarında geçen, duy
 
 ## Hedef Kitle
 
-- Genel Kitle (PEGI 12).
+- Genel Kitle (PEGI 12)
 - Macera, gizem, platform ve hikaye odaklı oyunları sevenler.
 - Viktorya dönemi atmosferine ilgi duyanlar.
 - Mobil, PC ve konsol platformlarında kaliteli oyun arayanlar.
